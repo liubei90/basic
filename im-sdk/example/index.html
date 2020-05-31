@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    textarea {
+      width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <div>
+    <button id="sendbtn1">ws1发送</button>
+    <br>
+    <textarea id="msginput1" type="text"></textarea>
+    <br>
+    <textarea id="msgoutput1"></textarea>
+  </div>
+
+  <br><br>
+
+  <div>
+    <button id="sendbtn2">ws2发送</button>
+    <br>
+    <textarea id="msginput2" type="text"></textarea>
+    <br>
+    <textarea id="msgoutput2"></textarea>
+  </div>
+
+
+  <script>
+    function createWs(user_id, access_token) {
+      var ws = new WebSocket(`ws://localhost:8001/ws/im/${user_id}?access_token=${access_token}`)
+      ws.addEventListener('open', function(evt) {
+        console.log('on open')
+      })
+
+      ws.addEventListener('close', function(evt) {
+        console.log('on close')
+        console.dir(evt)
+      })
+      return ws
+    }
+  </script>
+
+  <script>
+    var sendbtn1 = document.querySelector('#sendbtn1');
+    var msginput1 = document.querySelector('#msginput1');
+    var msgoutput1 = document.querySelector('#msgoutput1');
+    var ws1 = createWs('yonghu1', '123');
+
+    sendbtn1.addEventListener('click', function(){
+      ws1.send(msginput1.value);
+    })
+    ws1.addEventListener('message', function(evt) {
+        msgoutput1.value = evt.data;
+    })
+  </script>
+
+  <script>
+    var sendbtn2 = document.querySelector('#sendbtn2');
+    var msginput2 = document.querySelector('#msginput2');
+    var msgoutput2 = document.querySelector('#msgoutput2');
+    var ws2 = createWs('yonghu2', '456')
+
+    sendbtn2.addEventListener('click', function() {
+      ws2.send(msginput2.value);
+    });
+    ws2.addEventListener('message', function(evt) {
+      msgoutput2.value = evt.data;
+    })
+  </script>
+</body>
+</html>

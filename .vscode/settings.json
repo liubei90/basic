@@ -1,0 +1,14 @@
+{
+  "python.pythonPath": "C:\\Users\\10210\\.virtualenvs\\im-sdk-DPo8N6nm\\Scripts\\python.exe",
+  "sqltools.connections": [
+    {
+      "askForPassword": true,
+      "database": "sdk",
+      "dialect": "MySQL",
+      "name": "本地",
+      "port": 3306,
+      "server": "localhost",
+      "username": "root"
+    }
+  ]
+}
