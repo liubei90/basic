@@ -11,17 +11,17 @@ from ws.receive_common import ReceiveCommon
 from ws_handler_cache import get_ws_handler, cache_ws_handler, remove_ws_handler
 
 
-imlog = Log()
+wslog = Log()
 
-class IMHandler(WebSocketHandler, ImHandlerContent, WsHandlerWriter):
+class WsHandler(WebSocketHandler, ImHandlerContent, WsHandlerWriter):
     def check_origin(self, origin):
         return True
 
     def open(self):
-        imlog.print('on open')
+        wslog.print('on open')
         user_id = self._get_user_id()
         access_token = self._get_access_token()
-        imlog.print(user_id, access_token)
+        wslog.print(user_id, access_token)
 
         # 验证用户有效性和token信息
         if not user_id or not access_token:
@@ -33,8 +33,8 @@ class IMHandler(WebSocketHandler, ImHandlerContent, WsHandlerWriter):
         cache_ws_handler(self.stream_type, self.user_id, self)
 
     async def on_message(self, message):
-        imlog.print('get message')
-        imlog.print(message)
+        wslog.print('get message')
+        wslog.print(message)
         ipt = None
 
         try:
@@ -51,12 +51,11 @@ class IMHandler(WebSocketHandler, ImHandlerContent, WsHandlerWriter):
             return self.write_message(cast(WsOutput, ReceiveCommon(str(err))))
 
     def on_close(self):
-        imlog.print('on close')
+        wslog.print('on close')
         remove_ws_handler(self.stream_type, self.user_id, self)
 
     def write_message(self, msg: WsOutput):
         chunk = msg.output()
-        chunk = chunk.encode('latin-1').decode('unicode_escape')
         return super().write_message(chunk)
 
     def _get_user_id(self):

@@ -9,6 +9,7 @@ verify_ssl = true
 tornado = "*"
 click = "*"
 aiomysql = "*"
+pymysql = "*"
 
 [requires]
 python_version = "3.7"

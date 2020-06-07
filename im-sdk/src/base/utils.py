@@ -6,3 +6,6 @@ def dict2class(classT, d):
     t = classT()
     t.__dict__.update(d)
     return t
+
+def class2dict(clsi):
+    return clsi.__dict__.copy()

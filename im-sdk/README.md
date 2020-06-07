@@ -22,14 +22,77 @@
 
 ### 群管理接口
 
+#### 群列表
+GET /im/group
+
+curl -v -X GET http://localhost:8001/im/group?access_token=123
+
 #### 新建群组
+POST /im/group
+{
+  "name": "",
+  "remark": "",
+  "group_owner": "",
+  "members": [
+    {"id": "", "nickname": ""},
+  ],
+}
+
+curl -v -X POST -H 'Content-type:application/json' -d '{\"name\":\"第一个群\",\"remark\":\"昵称\",\"group_owner\":\"123\",\"members\":[{\"id\":\"123\",\"nickname\":\"群主\"},{\"id\":\"123\"}]}' http://localhost:8001/im/group?access_token=123
+
+### 修改群信息
+PUT /im/group/{id}
+{
+  "name": "",
+  "remark": "",
+  "group_owner": "",
+}
+
+curl -v -X PUT -H 'Content-type:application/json' -d '{\"name\": \"修改后的name\"}' http://localhost:8001/im/group/78c8291c-a80d-11ea-84c0-54e1ad77c3de?access_token=123
 
 #### 解散群组
+DELETE /im/group/{id}
+
+curl -v -X DELETE -H 'Content-type:application/json'  http://localhost:8001/im/group/78c8291c-a80d-11ea-84c0-54e1ad77c3de?access_token=123
+
+POST /im/groups/_delete
+{
+  "ids": ["group_id"]
+}
+
+
+#### 群成员列表
+GET /im/group/{group_id}/member
+curl -v -X GET http://localhost:8001/im/group/97f3a6a4-a807-11ea-abf6-54e1ad77c3de/member?access_token=123
+
 
 #### 加入群组
+POST /im/group/{group_id}/member
+{
+  "members": [
+    {"id", "", "nickname": ""},
+  ]
+}
+curl -v -X POST -H 'Content-type:application/json' -d '{\"members\": [{\"id\":\"456\", \"nickname\": \"昵称2\"}]}' http://localhost:8001/im/group/97f3a6a4-a807-11ea-abf6-54e1ad77c3de/member?access_token=123
+
+#### 修改成员信息
+PUT /im/group/{group_id}/member/{member_id}
+{
+  "nickname": ""
+}
+
+curl -v -X PUT -H 'Content-type:application/json' -d '{\"nickname\": \"super mm\"}' http://localhost:8001/im/group/97f3a6a4-a807-11ea-abf6-54e1ad77c3de/member/123?access_token=123
 
 #### 退出群组
-如果是群主退出，将群主给下一个人
+DELETE /im/group/{group_id}/member/{member_id}
+
+curl -v -X DELETE http://localhost:8001/im/group/97f3a6a4-a807-11ea-abf6-54e1ad77c3de/member/123?access_token=123
+
+POST /im/group/{group_id}/members/_delete
+{
+  "ids": ["member_id"]
+}
+
 
 
 ### ws信息管理

@@ -27,7 +27,7 @@ class ResultImReceive(WsInput):
     def get_output(self):
         return None
 
-    def _insert_result(self):
+    async def _insert_result(self):
         mres = MImMessageSendResult()
         await mres.insert_message_send_result(self._msg_t)
 
@@ -35,7 +35,7 @@ class ResultImReceive(WsInput):
         mmsg = MImMessage()
         res = await mmsg.query_message_by_id([self._msg_t.message_id])
         return res[0] if len(res) > 0 else None
-    
+
     async def _update_message_detail_status(self):
         pass
         # mmsg = MImMessage()
