@@ -9,4 +9,33 @@
 ## 使用方法
 接口方式接入
 
-### 
+### 注册接口
+POST /auth/regist
+{
+  "user_name": "用户名/手机号",
+  "password": "密码",
+  "phone": "",
+  "email": "",
+  "sex": 1,
+}
+
+### 验证用户是否存在
+POST /user/isexists
+{
+  "name": ""
+}
+
+### 登录接口
+POST /auth/login
+{
+  "name": "用户名/手机号",
+  "password": "密码"
+}
+
+
+### 通过access_token获取用户信息
+GET /auth/verification?access_token=123
+
+### 退出接口
+GET /auth/logout?access_token=123
+

@@ -1,11 +1,13 @@
 [[source]]
 name = "pypi"
-url = "https://mirrors.aliyun.com/pypi/simple/"
-verify_ssl = true
+# url = "http://mirrors.aliyun.com/pypi/simple/"
+# verify_ssl = true
+url = "http://localhost:7000/simple/"
 
 [dev-packages]
 
 [packages]
+basic-common = "*"
 
 [requires]
 python_version = "3.7"

@@ -12,7 +12,7 @@ def create_app():
 
 @click.command()
 @click.option('--name', default='im-sdk', help='')
-@click.option('--port', default=8001, type=int, help='默认端口8001')
+@click.option('--port', default=8002, type=int, help='默认端口8001')
 def main(name, port):
     app = create_app()
     app.listen(port)
