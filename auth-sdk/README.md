@@ -39,3 +39,6 @@ GET /auth/verification?access_token=123
 ### 退出接口
 GET /auth/logout?access_token=123
 
+
+AppID(小程序ID)wx97bc158106e9d0a6
+AppSecret(小程序密钥)f1c94eeaf6d8df47685c1d4c439d1973
