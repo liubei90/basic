@@ -7,7 +7,8 @@ setup(
         'tornado',
         'click',
         'aiomysql',
-        'pymysql'
+        'pymysql',
+        'furl'
     ],
     # packages=['basic_common', 'basic_common.base']
     packages=find_packages()
