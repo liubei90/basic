@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../node-ops.js"></script>
+  <script src="../swipe/swipe.js"></script>
+  <style>
+    html, body {
+      width: 100%;
+    }
+    #swipe1 {
+      width: 100%;
+      overflow: hidden;
+    }
+    .max-image {
+      width: 100%;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div id="swipe1"></div>
+  </div>
+
+  <script>
+    var createElement = basic_node_ops.createElement;
+    var appendChild = basic_node_ops.appendChild;
+
+    var swipe1 = document.querySelector('#swipe1');
+    var createSwipe = basic_swipe.createSwipe;
+    var swipe1_control = createSwipe(swipe1, {
+      createItemElm: function(item) {
+        var elm = createElement('div');
+        var img = createElement('img');
+        img.src = item.url;
+        img.classList.add('max-image');
+        console.log(item.url);
+        console.dir(img);
+        appendChild(elm, img)
+        return elm;
+      }
+    }, [
+      {url: './apple-2.jpg', title: '图片1'},
+      {url: './apple-3.jpg', title: '图片2'},
+    ]);
+  </script>
+</body>
+</html>
