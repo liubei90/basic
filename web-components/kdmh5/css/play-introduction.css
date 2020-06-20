@@ -1,0 +1,140 @@
+.video-section {
+  margin-top: 15px;
+}
+
+#video-swipe {
+  width: 100%;
+  padding: 0 40px;
+  overflow: hidden;
+}
+
+.video-item {
+  padding: 0 10px;
+}
+
+.img-panel {
+  background-color: #252627;
+  padding: 15px 40px;
+  position: relative;
+}
+
+.img-panel::after {
+  content: " ";
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: url('../image/bofang@2x.png') 100%/100% no-repeat;
+}
+
+.video-item .preview-img {
+  width: 250px;
+  height: 110px;
+  max-width: 100%;
+  text-align: center;
+}
+
+.video-item .video-title {
+  padding-top: 10px;
+  font-size: 13px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  text-align: left;
+  color: #ffcf00;
+}
+
+.video-in-mask {
+  max-width: 100%;
+  width: 100%;
+}
+
+/* video::-webkit-media-controls-enclosure {
+  overflow:hidden;
+}
+video::-webkit-media-controls-panel {
+  width: calc(100% + 30px);
+} */
+
+
+.problem-section {
+  padding: 0 15px;
+  margin-top: 30px;
+}
+
+.problem-title {
+  font-size: 15px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #f8f8f8;
+}
+
+#problem-tabs {
+  margin-top: 15px;
+}
+
+.problem-label-wapper {
+  padding: 0 10px;
+  display: inline-block;
+}
+
+.problem_tabs-label:first-of-type .problem-label-wapper {
+  padding-left: 0;
+}
+.problem_tabs-label:last-of-type .problem-label-wapper {
+  padding-right: 0;
+}
+
+.problem-label {
+  font-size: 13px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #ffffff;
+  display: inline-block;
+  padding: 0 12px;
+  line-height: 22px;
+  height: 22px;
+  vertical-align: middle;
+}
+
+.active .problem-label {
+  background-color: #FFCF00;
+  color: #010101;
+  border-radius: 11px;
+}
+
+.problem-expand {
+  margin-top: 14px;
+}
+
+.problem-expand-title {
+  font-size: 14px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #ffcf00;
+  position: relative;
+}
+
+.problem-expand-title::after {
+  content: " ";
+  position: absolute;
+  width: 11px;
+  height: 6px;
+  right: 15px;
+  top: 7px;
+  background: url('../image/shouqi@2x.png') 100%/100% no-repeat;
+}
+
+.problem-expand.active .problem-expand-title::after {
+  background: url('../image/zhankai@2x.png') 100%/100% no-repeat;
+}
+
+.problem-expand-detail {
+  margin-top: 7px;
+  font-size: 12px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 15px;
+}

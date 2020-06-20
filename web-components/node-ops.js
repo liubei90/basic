@@ -60,6 +60,16 @@
     node.textContent = text
   }
 
+  function getElementRect(node) {
+    var cloneElm = document.importNode(node, true);
+    appendChild(document.documentElement, cloneElm);
+    var rect = cloneElm.getBoundingClientRect();
+    console.log(cloneElm);
+    console.log(JSON.stringify(rect))
+    removeChild(document.documentElement, cloneElm);
+    return rect;
+  }
+
 
   return {
     createElement: createElement,
@@ -74,6 +84,7 @@
     tagName: tagName,
     setTextContent: setTextContent,
     getChild: getChild,
+    getElementRect: getElementRect,
   }
 }));
 

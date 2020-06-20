@@ -4,18 +4,28 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <script src="../utils.js"></script>
   <script src="../node-ops.js"></script>
+  <script src="../touch.js"></script>
   <script src="../swipe/swipe.js"></script>
   <style>
     html, body {
       width: 100%;
+      padding: 0;
+      margin: 0;
     }
     #swipe1 {
       width: 100%;
+      padding: 0 20px;
       overflow: hidden;
+      box-sizing: border-box;
     }
     .max-image {
       width: 100%;
+    }
+    .swipe-item {
+      padding: 0 10px;
+      box-sizing: border-box;
     }
   </style>
 </head>
@@ -27,24 +37,61 @@
   <script>
     var createElement = basic_node_ops.createElement;
     var appendChild = basic_node_ops.appendChild;
+    var setTextContent = basic_node_ops.setTextContent;
 
     var swipe1 = document.querySelector('#swipe1');
     var createSwipe = basic_swipe.createSwipe;
     var swipe1_control = createSwipe(swipe1, {
+      width: document.documentElement.clientWidth - 40,
       createItemElm: function(item) {
         var elm = createElement('div');
-        var img = createElement('img');
-        img.src = item.url;
-        img.classList.add('max-image');
-        console.log(item.url);
-        console.dir(img);
-        appendChild(elm, img)
+        elm.classList.add('swipe-item');
+        elm.style.position = 'relative';
+        if (item.type === 'img') {
+          appendChild(elm, create_img(item));
+        } else if (item.type === 'video') {
+          var vdo = create_video(item);
+          appendChild(elm, vdo);
+
+          var mask = createElement('div');
+          mask.style.position = 'absolute';
+          mask.style.top = 0;
+          mask.style.width = '100%';
+          mask.style.height = '100%';
+          setTextContent(mask, ' ');
+          appendChild(elm, mask);
+          mask.addEventListener('click', function () {
+            if (vdo.paused) {
+              vdo.play();
+            } else {
+              vdo.pause();
+            }
+          });
+        }
         return elm;
       }
     }, [
-      {url: './apple-2.jpg', title: '图片1'},
-      {url: './apple-3.jpg', title: '图片2'},
+      {url: './help1.mp4', type: 'video', title: '图片2'},
+      {url: './help1.mp4', type: 'video', title: '图片2'},
+      {url: './help1.mp4', type: 'video', title: '图片2'},
+      // {url: './apple-2.jpg', type: 'img', title: '图片1'},
+      // {url: './apple-3.jpg', type: 'img', title: '图片2'},
     ]);
+
+    function create_img(item) {
+      var img = createElement('img');
+      img.src = item.url;
+      img.classList.add('max-image');
+      return img;
+    }
+
+    function create_video(item) {
+      var vdo = createElement('video');
+      vdo.src = item.url;
+      vdo.name = 'media';
+      vdo.classList.add('max-image');
+      return vdo;
+    }
   </script>
 </body>
 </html>

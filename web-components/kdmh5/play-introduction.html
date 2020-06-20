@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>玩法介绍</title>
+  <link rel="stylesheet" href="./css/common.css">
+  <link rel="stylesheet" href="./css/play-introduction.css">
+  <script src="../utils.js"></script>
+  <script src="../node-ops.js"></script>
+  <script src="../touch.js"></script>
+  <script src="../swipe/swipe.js"></script>
+  <script src="../tabs/tabs.js"></script>
+</head>
+<body>
+  <div class="main">
+    <!-- 视频介绍 -->
+    <div class="video-section">
+      <div id="video-swipe"></div>
+    </div>
+    <!-- 常见问题 -->
+    <div class="problem-section">
+      <div class="problem-title">常见问题</div>
+      <div id="problem-tabs"></div>
+    </div>
+  </div>
+  <div id="mask">
+    <div class="mask-panel"></div>
+  </div>
+  <template id="video-placeholder">
+    <div class="video-item">
+      <div class="img-panel">
+        <img class="preview-img"></img>
+      </div>
+      <div class="video-title"><span></span></div>
+    </div>
+  </template>
+  <template id="tabs-label-placeholder">
+    <div class="problem-label-wapper">
+      <div class="problem-label"></div>
+    </div>
+  </template>
+  <template id="tabs-content-placeholder">
+    <div class="problem-content">
+    </div>
+  </template>
+  <template id="tabs-expand-placeholder">
+    <div class="problem-expand">
+      <div class="problem-expand-title"></div>
+      <div class="problem-expand-detail"></div>
+    </div>
+  </template>
+  <script src="./js/play-introduction.js"></script>
+</body>
+</html>

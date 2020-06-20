@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script src="../node-ops.js"></script>
+  <script src="../touch.js"></script>
+  <script src="../tabs/tabs.js"></script>
+</head>
+<body>
+  <div id="tabs1"></div>
+  <!-- <div class="basic_tabs">
+    <div class="basic_tabs-wrap">
+      <div class="basic_tabs-nav">
+        <div>title1</div>
+        <div>title2</div>
+        <div>title3</div>
+      </div>
+    </div>
+    <div class="basic_tabs-content">
+      <div class="basic_tabs-item">item1</div>
+      <div class="basic_tabs-item">item2</div>
+      <div class="basic_tabs-item">item3</div>
+    </div>
+  </div> -->
+  <script>
+    var createTabs = basic_tabs.createTabs;
+    var tabs1 = document.querySelector('#tabs1');
+    var tabs1Control = createTabs(tabs1, {
+      createTitle: function(item, index) {
+        var elm = document.createElement('span');
+        elm.textContent = item['title'];
+        return elm;
+      },
+      createContent: function(item, index) {
+        var elm = document.createElement('div');
+        elm.textContent = index;
+        return elm;
+      },
+    }, [
+      { title: '全部', content: {
+        expands: [
+          { title: '一、淘宝客怎么绑定抖音？', content: ' \
+1、首先进入抖音app中，点击【我】菜单； \
+2、点击【我】的页面中的【商品橱窗】功能； \
+3、进入到商品橱窗页面后，点击头像右边的箭头；\
+4、选择【淘宝账号绑定】菜单； \
+5、进入到【淘宝账号绑定】中，点击【去淘宝获取】； \
+6、获取时，会跳转到淘宝客户端（需要安装淘宝app），点击【同意协议并绑定】； \
+7、当淘宝app显示绑定成功后，返回至抖音，这样就绑定了淘宝客；' },
+          { title: '二、问题内容问题内容？', content: 'content2' },
+          { title: '三、问题内容问题内容？', content: 'content2' },
+          { title: '四、问题内容问题内容？', content: 'content2' },
+          { title: '五、问题内容问题内容？', content: 'content2' },
+          { title: '六、问题内容问题内容？', content: 'content2' },
+        ]
+      } },
+      { title: '标签1' },
+      { title: '标签2' },
+      { title: '标签3' },
+      { title: '标签4' },
+      { title: '标签5' },
+      { title: '标签6' },
+      { title: '标签7' },
+      { title: '标签8' },
+      { title: '标签9' },
+      { title: '标签10' },
+    ])
+
+  </script>
+</body>
+</html>
