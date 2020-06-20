@@ -12,7 +12,7 @@
 
   function previewImgClickHandler(item) {
     console.log(item.url);
-    var videoElm = creat_video_elm(item);
+    var videoElm = creat_video_elm(item['videoUrl']);
     if (videoElm) {
       show_mask(true, videoElm);
     }
@@ -41,39 +41,7 @@
     }
   }, videoData);
 
-  // 视频弹出
-  var mask = document.querySelector('#mask');
-  var maskPanel = mask.querySelector('.mask-panel');
 
-  mask.addEventListener('click', function(event) {
-    if (event.target === mask) {
-      show_mask(false);
-    }
-  });
-
-  function show_mask(visible, elm) {
-    if (!visible) {
-      // mask.style.display = 'none';
-      mask.classList.remove('visible');
-    } else {
-      maskPanel.innerHTML = '';
-      maskPanel.appendChild(elm);
-      mask.classList.add('visible')
-      // mask.style.display = '';
-    }
-  }
-
-  function creat_video_elm(item) {
-    if (item.videoUrl) {
-      var vdo = document.createElement('video');
-      vdo.src = item.videoUrl;
-      vdo.name = 'media';
-      vdo.autoplay = true;
-      vdo.controls = true;
-      vdo.classList.add('video-in-mask');
-      return vdo;
-    }
-  }
 
 
   // 常见问题

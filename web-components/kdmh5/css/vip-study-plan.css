@@ -1,3 +1,7 @@
+.main {
+  padding-bottom: 110px;
+}
+
 .banner {
   position: relative;
   background: #000216;
@@ -14,10 +18,50 @@
 }
 
 .circle1,
-.circle1,
-.circle1 {
+.circle2,
+.circle3,
+.circle4,
+.circle5 {
   position: absolute;
-  border-radio: 50%;
+  border-radius: 50%;
+}
+.circle1 {
+  left: 34px;
+  bottom: 32px;
+  width: 48px;
+  height: 44px;
+  opacity: 0.2;
+  background-color: #8A92FF;
+}
+.circle2 {
+  left: 52px;
+  bottom: 28px;
+  width: 36px;
+  height: 33px;
+  opacity: 0.2;
+  background-color: #8A92FF;
+}
+.circle3 {
+  top: 29px;
+  right: -24px;
+  width: 48px;
+  height: 44px;
+  opacity: 0.9;
+  background-color: #00032E;
+}
+.circle4 {
+  left: 98px;
+  top: 72px;
+  width: 19px;
+  height: 19px;
+  background-color: #2dd0ff;
+}
+.circle5 {
+  top: 43px;
+  right: 81px;
+  width: 19px;
+  height: 19px;
+  background-color: #FF004E;
 }
 
 .txt-kdm {
@@ -55,4 +99,63 @@
   font-family: Lantinghei SC Demibold, Lantinghei SC Demibold-Demibold;
   font-weight: bold;
   color: #FFFFFF;
+}
+
+.introduction {
+  padding: 0 15px;
+  margin-top: 20px;
+}
+
+.introduction .section {
+  margin-top: 34px;
+}
+
+.introduction .section:first-of-type {
+  margin-top: 0;
+}
+
+.introduction .title {
+  font-size: 16px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+}
+
+.introduction .content {
+  margin-top: 10px;
+  font-size: 13px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  text-align: left;
+  color: #ffffff;
+  line-height: 24px;
+  text-indent: 1em;
+}
+
+.video-in-introduction {
+  margin-top: 15px;
+  padding: 0 50px;
+  width: 100%;
+}
+
+
+.study-btn {
+  margin-top: 60px;
+  padding: 10px 12px;
+  background-color: #FFCF00;
+  border: none;
+  border-radius: 3px;
+  font-size: 13px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  text-align: center;
+  color: #151515;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+.study-btn:active {
+  border: none;
+  border-radius: 3px;
+  outline: none;
 }
