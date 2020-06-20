@@ -1,0 +1,58 @@
+.banner {
+  position: relative;
+  background: #000216;
+  width: 100%;
+  height: 200px;
+}
+
+.banner-background {
+
+}
+
+.banner-content {
+
+}
+
+.circle1,
+.circle1,
+.circle1 {
+  position: absolute;
+  border-radio: 50%;
+}
+
+.txt-kdm {
+  position: absolute;
+  top: 38px;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  line-height: 50px;
+}
+
+.txt-kuai {
+  font-size: 54px;
+  font-family: Lantinghei SC Demibold, Lantinghei SC Demibold-Demibold;
+  font-weight: bold;
+  color: #2dd0ff;
+}
+
+.txt-dou {
+  font-size: 54px;
+  font-family: Lantinghei SC Demibold, Lantinghei SC Demibold-Demibold;
+  font-weight: bold;
+  color: #FFD200;
+}
+
+.txt-mao {
+  font-size: 54px;
+  font-family: Lantinghei SC Demibold, Lantinghei SC Demibold-Demibold;
+  font-weight: bold;
+  color: #FF004E;
+}
+
+.txt-hyxxjh {
+  font-size: 41px;
+  font-family: Lantinghei SC Demibold, Lantinghei SC Demibold-Demibold;
+  font-weight: bold;
+  color: #FFFFFF;
+}
