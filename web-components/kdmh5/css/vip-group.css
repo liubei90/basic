@@ -1,0 +1,132 @@
+.group-card {
+  margin: 25px 33px 0;
+  padding: 15px 7px;
+  background-color: #ffffff;
+  border-radius: 5px;
+}
+
+.card-panel {
+  display: flex;
+  align-items: center;
+}
+
+.card-avatar {
+  flex: 0 0 70px;
+}
+
+.card-avatar img {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+}
+
+.card-info {
+  flex: 1;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #161616;
+}
+.card-name {
+  font-size: 17px;
+}
+.card-level {
+  font-size: 15px;
+  margin-top: 12px;
+}
+
+.card-opt {
+  flex: 0 0 90px;
+  text-align: right;
+}
+
+.card-btn {
+  font-size: 15px;
+  color: #ffffff;
+  padding: 7px;
+  margin-right: 3px;
+}
+
+
+.group-income {
+  margin-top: 40px;
+  padding: 0 15px;
+}
+
+.income-level {
+  font-size: 17px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #ffcf00;
+}
+
+.income-process {
+  display: flex;
+  align-items: center;
+  margin-top: 15px;
+}
+
+.process {
+  flex: 1;
+  height: 6px;
+  border-radius: 3px;
+  background-color: #ffffff;
+}
+
+.process-value {
+  width: 50%;
+  height: 100%;
+  border-radius: 3px;
+  background-color: #ffcf00;
+}
+
+.income-money {
+  flex: 0 0 60px;
+  text-align: right;
+  font-size: 16px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.income-total {
+  font-size: 13px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #ffffff;
+  margin-top: 9px;
+}
+
+.group-level {
+  margin-top: 32px;
+  margin-bottom: 27px;
+  padding: 0 15px;
+}
+
+.group-level-title {
+  font-size: 17px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #ffcf00;
+}
+
+.group-level .section {
+  margin-top: 15px;
+  padding: 15px;
+  background-color: #2F3143;
+}
+
+.group-level .title {
+  font-size: 17px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.group-level .detail {
+  font-size: 14px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #ffffff;
+  line-height: 1.75em;
+}
+

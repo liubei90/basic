@@ -1,0 +1,164 @@
+.main {
+  margin-bottom: 73px;
+}
+
+.avatar-section {
+  margin-top: 19px;
+  text-align: center;
+}
+
+.img-avatar {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+}
+
+.user-nick {
+  font-size: 15px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+
+.form-section {
+  margin-top: 32px;
+}
+
+.form-panel {
+  margin: 0 15px;
+  padding: 10px 10px 16px;
+  background-color: #2F3143;
+}
+.form-panel .title {
+  text-align: left;
+  font-size: 15px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+.input-activation-code {
+  margin-top: 15px;
+  text-align: center;
+}
+.input-activation-code input {
+  width: 250px;
+  height: 50px;
+  border: none;
+  outline: none;
+  padding: 19px;
+  text-align: center;
+  font-size: 13px;
+  background-color: #3A3C51;
+}
+
+.input-activation-code input::-webkit-input-placeholder {
+  font-size: 13px;
+  background-color: #3A3C51;
+}
+
+.activate-btn {
+  margin-top: 30px;
+  text-align: center;
+}
+.activate-btn button {
+  width: 250px;
+  height: 30px;
+  text-align: center;
+  color: #FFCF00;
+  border: #FFCF00 1px solid;
+  background-color: transparent;
+}
+
+.form-footer {
+  margin: 11px 15px 0;
+  font-size: 12px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #bdbfca;
+  line-height: 18px;
+}
+
+.group-card {
+  margin: 36px 15px 0;
+  padding: 16px 10px;
+  background-color: #2F3143;
+}
+
+.card-panel {
+  display: flex;
+  align-items: center;
+}
+
+.card-avatar {
+  flex: 0 0 55px;
+}
+
+.card-avatar img {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+}
+
+.card-info {
+  flex: 1;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  color: #FFFFFF;
+}
+.card-name {
+  font-size: 15px;
+}
+.service-role {
+  padding: 0 6px;
+  margin-left: 5px;
+  line-height: 20px;
+  height: 20px;
+  border-radius: 12px;
+  font-size: 12px;
+  color: #ffffff;
+  background-color: #EE2B2B;
+  display: inline-block;
+  transform: scale(0.8);
+}
+.card-level {
+  font-size: 12px;
+  margin-top: 5px;
+  color: #BDBFCA;
+}
+
+.card-opt {
+  flex: 0 0 90px;
+  text-align: right;
+}
+
+.service-btn {
+  font-size: 13px;
+  line-height: 1em;
+  color: #242424;
+  padding: 6px;
+  margin-right: 3px;
+}
+
+.notice-sectioin {
+  margin: 20px 15px 0;
+  font-size: 12px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  text-align: left;
+  color: #bdbfca;
+  line-height: 18px;
+}
+
+.notice-title {
+
+}
+
+.notice-detial {
+
+}
+
+.notice-footer {
+  margin-top: 23px;
+}

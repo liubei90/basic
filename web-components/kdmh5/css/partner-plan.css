@@ -1,0 +1,58 @@
+.main {
+  margin-bottom: 100px;
+}
+
+.partner-description {
+  text-align: center;
+  margin-top: 20px;
+}
+
+.partner-description .img-hhr {
+  width: 130px;
+}
+
+.partner-description .img-sqz {
+  width: 150px;
+  margin-top: 22px;
+}
+
+.partner-description .description {
+  padding: 0 55px;
+  margin-top: 15px;
+  font-size: 14px;
+  font-family: PingFang SC Regular, PingFang SC Regular-Regular;
+  font-weight: bold;
+  text-align: left;
+  color: #bdbfca;
+}
+
+.partner-detail {
+  margin-top: 40px;
+}
+
+.section {
+  padding: 0 12px;
+  margin-top: 24px;
+  font-size: 16px;
+  font-family: PingFang SC Medium, PingFang SC Medium-Medium;
+  font-weight: bold;
+  text-align: center;
+  color: #ffffff;
+  line-height: 20pt;
+}
+
+.section .detail {
+  font-size: 13px;
+  color: #BDBFCA;
+}
+
+.section .sub_title {
+  color: #FFFFFF;
+  margin-top: 25px;
+  display: inline-block;
+}
+
+.section .sub_title:first-of-type {
+  margin-top: 0;
+}
+
