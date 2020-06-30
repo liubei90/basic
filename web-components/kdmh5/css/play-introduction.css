@@ -1,3 +1,7 @@
+.main {
+  padding-bottom: 20px;
+}
+
 .video-section {
   margin-top: 15px;
 }
@@ -16,6 +20,7 @@
   background-color: #252627;
   padding: 15px 40px;
   position: relative;
+  overflow: hidden;
 }
 
 .img-panel::after {

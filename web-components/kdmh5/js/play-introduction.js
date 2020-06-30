@@ -4,7 +4,7 @@
     var previewImg = videoPlaceholder.content.querySelector('.preview-img');
     var imgTitle = videoPlaceholder.content.querySelector('.video-title');
 
-    previewImg.src = imgsrc;
+    previewImg.src = imgsrc + '#t=1';
     imgTitle.textContent = title;
 
     return document.importNode(videoPlaceholder.content, true);
@@ -20,28 +20,41 @@
 
   var videoSwipe = document.querySelector('#video-swipe');
   var createSwipe = basic_swipe.createSwipe;
-  var videoData = [
-    // {url: './help1.mp4', type: 'video', title: '图片2'},
-    // {url: './help1.mp4', type: 'video', title: '图片2'},
-    // {url: './help1.mp4', type: 'video', title: '图片2'},
-    {url: './image/apple-2.jpg', title: '1.快抖猫如何绑定抖音？', videoUrl: './image/help1.mp4'},
-    {url: './image/apple-3.jpg', title: '2.快抖猫如何绑定抖音？', videoUrl: './image/help1.mp4'},
-  ];
+  // var videoData = [
+  //   // {url: './help1.mp4', type: 'video', title: '图片2'},
+  //   // {url: './help1.mp4', type: 'video', title: '图片2'},
+  //   // {url: './help1.mp4', type: 'video', title: '图片2'},
+  //   {url: './image/apple-2.jpg', title: '1.快抖猫如何绑定抖音？', videoUrl: './image/help1.mp4'},
+  //   {url: './image/apple-3.jpg', title: '2.快抖猫如何绑定抖音？', videoUrl: './image/help1.mp4'},
+  // ];
 
-
-  var videoSwipeControl = createSwipe(videoSwipe, {
-    width: document.documentElement.clientWidth - 100,
-    createItemElm: function(item) {
-      var elm = create_swipe_item(item.url, item.title);
-      elm = elm.children[0];
-      elm.addEventListener('click', function(event) {
-        previewImgClickHandler(item, event)
-      });
-      return elm;
+  function patchTopCarousel(topCarousel) {
+    if (!Array.isArray(topCarousel)) {
+      return;
     }
-  }, videoData);
 
+    topCarousel.sort(function(a, b) {
+      return a['sort'] > b['sort'] ? 1 : -1;
+    });
 
+    var videoData = topCarousel.map(function(item) {
+      return { url: item['url'], title: item['label'], videoUrl: item['url'] };
+    });
+
+    var videoSwipeControl = createSwipe(videoSwipe, {
+      width: document.documentElement.clientWidth - 100,
+      createItemElm: function(item) {
+        var elm = create_swipe_item(item.url, item.title);
+        elm = elm.children[0];
+        elm.addEventListener('click', function(event) {
+          previewImgClickHandler(item, event)
+        });
+        return elm;
+      }
+    }, videoData);
+
+    return videoSwipeControl;
+  }
 
 
   // 常见问题
@@ -125,30 +138,95 @@
 
   var problemTabs = document.querySelector('#problem-tabs');
   var createTabs = basic_tabs.createTabs;
-  var tabsData = [
-    { title: '全部', content: {
-      expand: [
-        { title: '一、淘宝客怎么绑定抖音？', content: '1、首先进入抖音app中，点击【我】菜单；' },
-        { title: '二、淘宝客怎么绑定抖音？', content: '2、点击【我】的页面中的【商品橱窗】功能；' },
-        { title: '三、淘宝客怎么绑定抖音？', content: '3、进入到商品橱窗页面后，点击头像右边的箭头；' },
-      ]
-    } },
-    { title: '标签1', content: {
-      expand: [
-        { title: '二、淘宝客怎么绑定抖音？', content: '1、首先进入抖音app中，点击【我】菜单；' },
-      ]
-    } },
-    { title: '标签2', content: {
-      expand: [
-        { title: '三、淘宝客怎么绑定抖音？', content: '1、首先进入抖音app中，点击【我】菜单；' },
-      ]
-    } }
-  ];
+  // var tabsData = [
+  //   { title: '全部', content: {
+  //     expand: [
+  //       { title: '一、淘宝客怎么绑定抖音？', content: '1、首先进入抖音app中，点击【我】菜单；' },
+  //       { title: '二、淘宝客怎么绑定抖音？', content: '2、点击【我】的页面中的【商品橱窗】功能；' },
+  //       { title: '三、淘宝客怎么绑定抖音？', content: '3、进入到商品橱窗页面后，点击头像右边的箭头；' },
+  //     ]
+  //   } },
+  //   { title: '标签1', content: {
+  //     expand: [
+  //       { title: '二、淘宝客怎么绑定抖音？', content: '1、首先进入抖音app中，点击【我】菜单；' },
+  //     ]
+  //   } },
+  //   { title: '标签2', content: {
+  //     expand: [
+  //       { title: '三、淘宝客怎么绑定抖音？', content: '1、首先进入抖音app中，点击【我】菜单；' },
+  //     ]
+  //   } }
+  // ];
 
-  createTabs(problemTabs, {
-    labelClass: 'problem_tabs-label',
-    createLabel: create_tabs_label,
-    createContent: create_tabs_content,
-  }, tabsData);
+
+  function patchQuestionInfo(questionInfo) {
+    if (!Array.isArray(questionInfo)) {
+      return;
+    }
+
+    questionInfo.sort(function(a, b) {
+      return a['lableName'] === '全部' ? -1 : 1;
+    });
+
+    var tabsData = questionInfo.map(function(item) {
+      return { title: item['lableName'], content: {
+        expand: Array.isArray(item['questionInfos']) 
+          ? item['questionInfos'].sort(function(a, b) { return (a['sort'] > b['sort']) ? 1 : -1 })
+              .map(function(question) {
+              return { title: question['ask'], content: question['answer'] };
+            }) 
+          : [],
+      } }
+    });
+    var tabControl = createTabs(problemTabs, {
+      labelClass: 'problem_tabs-label',
+      createLabel: create_tabs_label,
+      createContent: create_tabs_content,
+    }, tabsData);
+
+    return tabControl;
+  }
+
+
+  function createNonceStr() {
+    return String(Math.random()).substring(2)
+  }
+
+  function createSignQuery(query) {
+    query = query || {};
+    query['nonce_str'] = createNonceStr();
+    var keys = Object.keys(query);
+    var res = ''
+    keys.sort();
+
+    for (var i = 0; i < keys.length; i++) {
+      res += keys[i] + '=' + query[keys[i]]
+    }
+
+    sign_str = res + '&key=jwdjwmgrwoky6cw4xqq80d945zpii0z0';
+
+    return res += '&sign=' + md5(sign_str).toUpperCase();
+  }
+
+  // console.log('http://47.115.51.206:8081/api/H5/game/teaching?' + createSignQuery());
+
+  reqwest({
+    url: 'http://47.115.51.206:8081/api/H5/game/teaching?' + createSignQuery(),
+    method: 'post',
+    crossOrigin: true,
+    success: function(data) {
+      console.log(data);
+      if (data && data['code'] === 200 && data['data']) {
+        patchTopCarousel(data['data']['topCarousel']);
+        patchQuestionInfo(data['data']['questionInfo']);
+      } else {
+        alert(data ? data['message'] : '网络请求错误');
+      }
+    },
+    error: function(err) {
+      console.error(err);
+      alert('网络请求失败');
+    },
+  })
 
 })()
