@@ -7,7 +7,7 @@ url = "http://localhost:7000/simple/"
 [dev-packages]
 
 [packages]
-basic-common = "*"
+basic-common = "==0.0.9"
 
 [requires]
 python_version = "3.7"

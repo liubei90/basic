@@ -1,6 +1,6 @@
 from typing import List, Dict, Optional
 import hashlib
-from basic_common.config import configs
+from config import configs
 from basic_common.m_dao import MDao
 from basic_common.base.utils import dict2class
 
@@ -17,7 +17,7 @@ class MAuthLocalAuthT():
 
 class MAuthLocalAuth():
     def __init__(self):
-        self._db = MDao(configs['db']['sdk'])
+        self._db = MDao(configs['db']['auth'])
 
     async def insert_auth(self, local_auth: MAuthLocalAuthT):
         sql = '''

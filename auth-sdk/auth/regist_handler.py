@@ -1,12 +1,12 @@
 import uuid
-from basic_common.handler_payload import HandlerPayload
+from basic_common.handler_payload import PayloadHandler
 from basic_common.base.log import Log
-from model.m_auth_user import MAuthUserT, MAuthUser
-from model.m_auth_local_auth import MAuthLocalAuthT, MAuthLocalAuth, hash_code
+from auth.model.m_auth_user import MAuthUserT, MAuthUser
+from auth.model.m_auth_local_auth import MAuthLocalAuthT, MAuthLocalAuth, hash_code
 
 alog = Log()
 
-class AuthRegistHandler(HandlerPayload):
+class AuthRegistHandler(PayloadHandler):
     async def post(self):
         # 验证传入参数
 
@@ -24,10 +24,11 @@ class AuthRegistHandler(HandlerPayload):
         # 创建用户登录信息
         malat = MAuthLocalAuthT()
         malat.id = str(uuid.uuid1())
+        malat.user_id = maut.id
         malat.slat = str(uuid.uuid1())
         malat.password = hash_code(self.payload.get('password'), malat.slat)
 
         mala = MAuthLocalAuth()
-        await mala.insert_auth(mala)
+        await mala.insert_auth(malat)
 
         return self.write({'status': True, 'msg': 'ok', '': []})

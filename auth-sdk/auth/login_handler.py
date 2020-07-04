@@ -1,15 +1,18 @@
 import uuid
 import time
-from basic_common.handler_payload import HandlerPayload
+from basic_common.jwt import create_jwt
+from basic_common.handler_payload import PayloadHandler
+# from basic_common.handler_user_detail import AuthorizationHandler
 from basic_common.base.log import Log
-from model.m_auth_user import MAuthUserT, MAuthUser
-from model.m_auth_local_auth import MAuthLocalAuthT, MAuthLocalAuth, hash_code
-from model.m_auth_sessions import MAuthSessionsT, MAuthSessions
+from config import configs
+from auth.model.m_auth_user import MAuthUserT, MAuthUser
+from auth.model.m_auth_local_auth import MAuthLocalAuthT, MAuthLocalAuth, hash_code
+from auth.model.m_auth_sessions import MAuthSessionsT, MAuthSessions
 
 
 alog = Log()
 
-class AuthLoginHandler(HandlerPayload):
+class AuthLoginHandler(PayloadHandler):
     async def post(self):
         # 参数校验
 
@@ -36,12 +39,18 @@ class AuthLoginHandler(HandlerPayload):
         if hash_code(self.payload.get('password'), auth_detail.slat) != auth_detail.password:
             return self.write({'status': False, 'msg': '用户名密码不正确', 'data': []})
 
-        expire_second = (1 * 60 * 60)
+        expire_second = configs['expire_second']
         mast = MAuthSessionsT()
         mast.id = str(uuid.uuid1())
         mast.user_id = user_detail.id
         mast.expire = time.strftime('%Y-%m-%d %H:%M:%S', time.localtime(time.time() + expire_second))
+        access_token = create_jwt({
+            'session_id': mast.id,
+            'expire_date': mast.expire,
+            'user_id': mast.user_id,
+        })
+        mast.jwt = access_token
 
         mas = MAuthSessions()
         await mas.insert_session(mast)
-        return self.write({'status': True, 'msg': 'ok', 'data': {'access_token': mast.id, 'expire': expire_second}})
+        return self.write({'status': True, 'msg': 'ok', 'data': {'access_token': access_token, 'expire': expire_second}})

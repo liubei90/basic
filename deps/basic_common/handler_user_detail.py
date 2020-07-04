@@ -1,7 +1,8 @@
 import asyncio
 from tornado.web import RequestHandler
-from module import get_module, Module
-from jwt import parse_jwt
+from .base.utils import get_module_data_error, get_mdoule_data
+from .module import get_module, Module
+from .jwt import parse_jwt
 
 def get_access_token(request) -> str:
     '''
@@ -31,7 +32,20 @@ class AuthorizationHandler(RequestHandler):
 
         if not self.authorization:
             self.set_status(401)
+            self.write({ 'status': False, 'msg': '登录信息有误', 'data': None })
             return self.finish()
+
+        verify_res = await self.verify_authorization()
+        err_msg = get_module_data_error(verify_res, '登录信息有误')
+
+        if err_msg:
+            self.set_status(401)
+            self.write({ 'status': False, 'msg': err_msg, 'data': None })
+            return self.finish()
+
+    async def verify_authorization(self):
+        auth = await get_module('auth-sdk')
+        return await auth.fetch_data('verify-authorization', self.authorization)
 
 class UserDetailHandler(RequestHandler):
     '''
@@ -53,17 +67,16 @@ class UserDetailHandler(RequestHandler):
             self.write({ 'status': False, 'msg': '登录信息有误', 'data': None })
             return self.finish()
 
-        self.user_detail = await self.get_user_detail(payload)
+        user_detail_res = await self.get_user_detail(payload)
+        err_msg = get_module_data_error(user_detail_res, '获取用户详细信息失败')
+        self.user_detail = get_mdoule_data(user_detail_res)
 
         # 获取用户详情失败
-        if not self.user_detail or '_error' in self.user_detail:
-            err = self.user_detail['_error']
+        if err_msg or not self.user_detail:
             self.set_status(401)
-            self.write({ 
-                'status': False, 
-                'msg': err['msg'] or '获取用户详细信息失败', 
-                'data': None })
+            self.write({ 'status': False, 'msg': err_msg, 'data': None })
             return self.finish()
+
 
     async def get_user_detail(self, payload: dict) -> dict:
         auth_sdk = await get_module('auth-sdk')

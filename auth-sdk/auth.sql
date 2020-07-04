@@ -21,7 +21,7 @@ drop table if exists sdk.auth_local_auth;
 create table sdk.auth_local_auth (
   id varchar(36) not null comment "授权id",
   user_id varchar(36) not null comment "用户id",
-  password varchar(36) not null comment "密码",
+  password varchar(512) not null comment "密码",
   slat varchar(36) not null comment "盐",
   create_on datetime not null default CURRENT_TIMESTAMP comment "创建时间",
   update_on datetime not null default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP comment "更新时间",
@@ -34,6 +34,7 @@ create table sdk.auth_sessions (
   id varchar(36) not null comment "session id",
   user_id varchar(36) not null comment "用户id",
   expire datetime default null comment "过期时间, null 永不过期",
+  jwt text not null comment "用户jwt",
   create_on datetime not null default CURRENT_TIMESTAMP comment "创建时间",
   update_on datetime not null default CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP comment "更新时间",
   is_deleted tinyint(1) unsigned default 0 comment "软删除标志",

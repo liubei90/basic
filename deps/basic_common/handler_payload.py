@@ -2,7 +2,7 @@ import asyncio
 import json
 from tornado.web import RequestHandler
 
-class HandlerPayload(RequestHandler):
+class PayloadHandler(RequestHandler):
     payload: dict = {}
 
     async def prepare(self):

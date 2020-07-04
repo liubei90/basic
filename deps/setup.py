@@ -2,7 +2,7 @@ from setuptools import setup, find_packages
 
 setup(
     name='basic_common',
-    version='0.0.3',
+    version='0.0.9',
     install_requires=[
         'tornado',
         'click',
