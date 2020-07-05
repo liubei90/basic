@@ -10,9 +10,9 @@ class MAuthLocalAuthT():
     user_id: str
     password: str
     slat: str
-    create_on: str
-    update_on: str
-    is_deleted: int
+    create_on: str = None
+    update_on: str = None
+    is_deleted: int = None
 
 
 class MAuthLocalAuth():

@@ -46,6 +46,10 @@ GET /auth/logout?access_token=123
 curl -X GET  -H "Authorization:Bearer eyJhbGciOiAiSFMyNTYifQ==.eyJzZXNzaW9uX2lkIjogIjBkZDFlNmUyLWJlMDMtMTFlYS1hZjc2LTU0ZTFhZDc3YzNkZSIsICJleHBpcmVfZGF0ZSI6ICIyMDIwLTA3LTA0IDIzOjMxOjMxIiwgInVzZXJfaWQiOiAiNmViNTNjM2EtYmUwMi0xMWVhLWJiNzAtNTRlMWFkNzdjM2RlIn0=.6tC99L3ke0FAyDvYmcvPGNLiACRnL1oRnHtN_K8prcI=" http://127.0.0.1:8001/auth/logout
 
 
+# 微信登录接口
+
+GET /auth/wx-login?code=123345
+
 # 内部接口
 
 ## 通过token中的payload获取用户详细信息

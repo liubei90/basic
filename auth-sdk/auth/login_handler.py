@@ -48,6 +48,7 @@ class AuthLoginHandler(PayloadHandler):
             'session_id': mast.id,
             'expire_date': mast.expire,
             'user_id': mast.user_id,
+            'source': 'web',
         })
         mast.jwt = access_token
 

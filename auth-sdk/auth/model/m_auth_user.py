@@ -7,12 +7,13 @@ from basic_common.base.utils import dict2class
 class MAuthUserT():
     id: str
     user_name: str
-    phone: str
-    email: str
-    sex: int
-    create_on: str
-    update_on: str
-    is_deleted: int
+    source: str = None
+    phone: str = None
+    email: str = None
+    sex: int = None
+    create_on: str = None
+    update_on: str = None
+    is_deleted: int = None
 
 
 class MAuthUser():
@@ -21,10 +22,10 @@ class MAuthUser():
 
     async def insert_user(self, user: MAuthUserT):
         sql = '''
-        insert into auth_user (id, user_name, phone, email, sex) values 
-        (%s, %s, %s, %s, %s);
+        insert into auth_user (id, user_name, source, phone, email, sex) values 
+        (%s, %s, %s, %s, %s, %s);
         '''
-        params = (user.id, user.user_name, user.phone, user.email, user.sex)
+        params = (user.id, user.user_name, user.source, user.phone, user.email, user.sex)
         return await self._db.dml(sql, params)
 
     async def update_user(self, user: MAuthUserT):

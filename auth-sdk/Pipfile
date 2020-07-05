@@ -8,6 +8,11 @@ url = "http://localhost:7000/simple/"
 
 [packages]
 basic-common = "==0.0.9"
+tornado = "*"
+click = "*"
+aiomysql = "*"
+pymysql = "*"
+furl = "*"
 
 [requires]
 python_version = "3.7"

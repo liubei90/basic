@@ -14,6 +14,7 @@ class AuthRegistHandler(PayloadHandler):
         maut = MAuthUserT()
         maut.id = str(uuid.uuid1())
         maut.user_name = self.payload.get('user_name')
+        maut.source = 'web'
         maut.phone = self.payload.get('phone')
         maut.email = self.payload.get('email')
         maut.sex = self.payload.get('sex')
