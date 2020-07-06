@@ -1,15 +1,29 @@
 //app.js
 App({
   onLaunch: function () {
-    let self = this;
-    if (!self.isLogin()) {
-      this.getLoginCode().then(function(code) {
-        return self.login(code);
+    if (!this.isLogin()) {
+      this.getLoginCode().then((code) => {
+        return this.login(code);
       }).then(function(res) {
         wx.setStorageSync('access_token', res.data.data.access_token)
       });
     }
-    
+
+    this.authScope('scope.userInfo').then(() => {
+      wx.getUserInfo({
+        success: res => {
+          // 可以将 res 发送给后台解码出 unionId
+          this.globalData.userInfo = res.userInfo
+
+          // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
+          // 所以此处加入 callback 以防止这种情况
+          if (this.userInfoReadyCallback) {
+            this.userInfoReadyCallback(res)
+          }
+        }
+      });
+    });
+
     // this.preAuthorize();
     // 展示本地存储能力
     // var logs = wx.getStorageSync('logs') || []
@@ -60,7 +74,6 @@ App({
     });
   },
   authScope: function(scope) {
-    // let scope = 'scope.record';
     return new Promise(function(resolve, reject) {
       wx.getSetting({
         success: (result)=>{
@@ -84,6 +97,12 @@ App({
                 reject();
               },
             });
+          } else {
+            wx.showToast({
+              title: '授权' + scope + '已拥有',
+              duration: 1500,
+            });
+            resolve();
           }
         },
         fail: ()=>{

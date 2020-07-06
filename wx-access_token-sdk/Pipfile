@@ -1,0 +1,18 @@
+[[source]]
+name = "pypi"
+# url = "http://mirrors.aliyun.com/pypi/simple/"
+# verify_ssl = true
+url = "http://localhost:7000/simple/"
+
+[dev-packages]
+
+[packages]
+basic-common = "==0.0.9"
+# tornado = "*"
+# click = "*"
+# aiomysql = "*"
+# pymysql = "*"
+# furl = "*"
+
+[requires]
+python_version = "3.7"
