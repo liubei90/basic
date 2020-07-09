@@ -50,12 +50,14 @@
   padding: 19px;
   text-align: center;
   font-size: 13px;
-  background-color: #3A3C51;
+  background-color: #FFFFFF;
+  color: #3A3C51;
+  font-weight: bold;
 }
 
 .input-activation-code input::-webkit-input-placeholder {
   font-size: 13px;
-  background-color: #3A3C51;
+  /* background-color: #FFFFFF; */
 }
 
 .activate-btn {
@@ -129,16 +131,16 @@
 }
 
 .card-opt {
-  flex: 0 0 90px;
+  flex: 0 0 45px;
   text-align: right;
 }
 
 .service-btn {
-  font-size: 13px;
-  line-height: 1em;
-  color: #242424;
-  padding: 6px;
+  border: none;
   margin-right: 3px;
+  width: 20px;
+  height: 22px;
+  background: url('../image/fuzhi@2x.png') 100%/100% no-repeat;
 }
 
 .notice-sectioin {
