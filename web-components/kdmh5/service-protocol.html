@@ -5,6 +5,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>服务协议</title>
   <link rel="stylesheet" href="./css/common.css">
+  <script src="./libs/md5.js"></script>
+  <script src="./libs/utils.js"></script>
+  <script src="./libs/reqwest.js"></script>
   <style>
     .service-protocol {
       margin: 38px 23px;
@@ -31,9 +34,13 @@
 <body>
   <div class="main">
     <div class="service-protocol">
-      <div class="title"><span>服务协议</span></div>
-      <div class="detail"><span>服务协议内容服务协议内容服务协议内容服务协议内容服务协议内容服务协议内容服务协议内容服务协内容服务协议内容服务协议内容</span></div>
+      <!-- <div class="title"><span>服务协议</span></div> -->
+      <div class="detail"></div>
     </div>
   </div>
+  <div id="loading" class="loading visible">
+    <div class="el-loading-spinner"><svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg><span class="loading-text"></span></div>
+  </div>
+  <script src="./js/service-protocol.js"></script>
 </body>
 </html>

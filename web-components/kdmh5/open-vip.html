@@ -6,6 +6,9 @@
   <title>开通会员</title>
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/open-vip.css">
+  <script src="./libs/md5.js"></script>
+  <script src="./libs/utils.js"></script>
+  <script src="./libs/reqwest.js"></script>
 </head>
 <body>
   <div class="main">
@@ -14,11 +17,11 @@
       <div class="card-panel">
         <!-- 头像 -->
         <div class="card-avatar">
-          <img src="./image/apple-2.jpg" alt="">
+          <img id="group-card-avatar" src="" alt="">
         </div>
         <!-- 群名 -->
         <div class="card-info">
-          <div class="card-name">happy<span class="service-role">负责人</span></div>
+          <div class="card-name"><span id="group-card-name"></span><span class="service-role">负责人</span></div>
         </div>
         <!-- 申请入群 -->
         <div class="card-opt">
@@ -69,9 +72,13 @@
     </div>
     <!-- 开通会员 -->
     <div class="open-section">
-      <div id="service-protocol" class="service-protocol"><span class="checkbox"> </span><span>开通会员前我已阅读并遵守<a href="">《快抖猫用户服务协议》</a></span></div>
+      <div id="service-protocol" class="service-protocol"><span class="checkbox"> </span><span>开通会员前我已阅读并遵守<a href="./service-protocol.html?id=1280873572070023170">《快抖猫用户服务协议》</a></span></div>
       <div id="open-btn" class="open-btn"><button class="common-btn">激活开通会员</button></div>
     </div>
+  </div>
+  <input id="copy-placeholder" type="text">
+  <div id="loading" class="loading visible">
+    <div class="el-loading-spinner"><svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg><span class="loading-text"></span></div>
   </div>
   <script src="./js/open-vip.js"></script>
 </body>

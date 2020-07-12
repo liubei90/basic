@@ -25,6 +25,22 @@
   margin-top: 32px;
 }
 
+.form-section.is-vip .form-panel,
+.form-section.is-vip .form-footer {
+  display: none;
+}
+
+.form-section.is-vip .vip-message {
+  height: 170px;
+  line-height: 150px;
+  margin: 0 15px;
+  padding: 10px 10px 16px;
+  background-color: #2F3143;
+  text-align: center;
+  color: #ffffff;
+  display: block;
+}
+
 .form-panel {
   margin: 0 15px;
   padding: 10px 10px 16px;
@@ -71,6 +87,10 @@
   color: #FFCF00;
   border: #FFCF00 1px solid;
   background-color: transparent;
+}
+
+.vip-message {
+  display: none;
 }
 
 .form-footer {
@@ -163,4 +183,9 @@
 
 .notice-footer {
   margin-top: 23px;
+}
+
+#copy-placeholder {
+  position: fixed;
+  top: -200%;
 }

@@ -138,25 +138,6 @@
 
   var problemTabs = document.querySelector('#problem-tabs');
   var createTabs = basic_tabs.createTabs;
-  // var tabsData = [
-  //   { title: '全部', content: {
-  //     expand: [
-  //       { title: '一、淘宝客怎么绑定抖音？', content: '1、首先进入抖音app中，点击【我】菜单；' },
-  //       { title: '二、淘宝客怎么绑定抖音？', content: '2、点击【我】的页面中的【商品橱窗】功能；' },
-  //       { title: '三、淘宝客怎么绑定抖音？', content: '3、进入到商品橱窗页面后，点击头像右边的箭头；' },
-  //     ]
-  //   } },
-  //   { title: '标签1', content: {
-  //     expand: [
-  //       { title: '二、淘宝客怎么绑定抖音？', content: '1、首先进入抖音app中，点击【我】菜单；' },
-  //     ]
-  //   } },
-  //   { title: '标签2', content: {
-  //     expand: [
-  //       { title: '三、淘宝客怎么绑定抖音？', content: '1、首先进入抖音app中，点击【我】菜单；' },
-  //     ]
-  //   } }
-  // ];
 
 
   function patchQuestionInfo(questionInfo) {
@@ -187,35 +168,15 @@
     return tabControl;
   }
 
-
-  function createNonceStr() {
-    return String(Math.random()).substring(2)
-  }
-
-  function createSignQuery(query) {
-    query = query || {};
-    query['nonce_str'] = createNonceStr();
-    var keys = Object.keys(query);
-    var res = ''
-    keys.sort();
-
-    for (var i = 0; i < keys.length; i++) {
-      res += keys[i] + '=' + query[keys[i]]
-    }
-
-    sign_str = res + '&key=jwdjwmgrwoky6cw4xqq80d945zpii0z0';
-
-    return res += '&sign=' + md5(sign_str).toUpperCase();
-  }
-
-  // console.log('http://47.115.51.206:8081/api/H5/game/teaching?' + createSignQuery());
+  var loading = document.querySelector('#loading');
 
   reqwest({
-    url: 'http://47.115.51.206:8081/api/H5/game/teaching?' + createSignQuery(),
+    url: 'http://47.115.51.206:8081/api/H5/game/teaching?' + basic_utils.createSignQuery(),
     method: 'post',
     crossOrigin: true,
     success: function(data) {
       console.log(data);
+      loading.classList.remove('visible');
       if (data && data['code'] === 200 && data['data']) {
         patchTopCarousel(data['data']['topCarousel']);
         patchQuestionInfo(data['data']['questionInfo']);
@@ -224,6 +185,7 @@
       }
     },
     error: function(err) {
+      loading.classList.remove('visible');
       console.error(err);
       alert('网络请求失败');
     },

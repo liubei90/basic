@@ -29,21 +29,20 @@
       line-height: 24px;
     }
   </style>
+  <script src="../md5.js"></script>
+  <script src="../utils.js"></script>
+  <script src="../reqwest.js"></script>
 </head>
 <body>
   <div class="main">
     <div class="withdrawal-section">
-      <div class="title"><span>提现说明：</span></div>
-      <div class="detail">
-        <span>1.每月最多可提现2次；</span>
-        <br>
-        <span>2.提现金额不限；</span>
-        <br>
-        <span>3.用户申请提现第二天开始，7个工作日内审核并发放；节假日顺延。（具体看银行结算时间）</span>
-        <br>
-        <span>4.提现手续为6%。</span>
-      </div>
+      <!-- <div class="title"><span>提现说明：</span></div> -->
+      <div class="detail"></div>
     </div>
   </div>
+  <div id="loading" class="loading visible">
+    <div class="el-loading-spinner"><svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg><span class="loading-text"></span></div>
+  </div>
+  <script src="./js/withdrawal-rules.js"></script>
 </body>
 </html>

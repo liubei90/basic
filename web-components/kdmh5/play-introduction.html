@@ -6,13 +6,13 @@
   <title>玩法介绍</title>
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/play-introduction.css">
-  <script src="../utils.js"></script>
-  <script src="../node-ops.js"></script>
-  <script src="../touch.js"></script>
-  <script src="../swipe/swipe.js"></script>
-  <script src="../tabs/tabs.js"></script>
-  <script src="../reqwest.js"></script>
-  <script src="../md5.js"></script>
+  <script src="./libs/md5.js"></script>
+  <script src="./libs/utils.js"></script>
+  <script src="./libs/reqwest.js"></script>
+  <script src="./libs/node-ops.js"></script>
+  <script src="./libs/touch.js"></script>
+  <script src="./libs/swipe.js"></script>
+  <script src="./libs/tabs.js"></script>
 </head>
 <body>
   <div class="main">
@@ -28,6 +28,9 @@
   </div>
   <div id="mask">
     <div class="mask-panel"></div>
+  </div>
+  <div id="loading" class="loading visible">
+    <div class="el-loading-spinner"><svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg><!----></div>
   </div>
   <template id="video-placeholder">
     <div class="video-item">

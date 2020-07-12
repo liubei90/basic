@@ -6,35 +6,33 @@
   <title>激活会员</title>
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/activate-vip.css">
+  <script src="./libs/md5.js"></script>
+  <script src="./libs/utils.js"></script>
+  <script src="./libs/reqwest.js"></script>
 </head>
 <body>
   <div class="main">
-    <!-- 头像 -->
-    <div class="avatar-section">
-      <div>
-        <img class="img-avatar" src="./image/apple-3.jpg" alt="">
-        <div class="user-nick"><span>HIll秒秒</span></div>
-      </div>
-    </div>
+    <div id="avatar-section" class="avatar-section"></div>
     <!-- 激活码 -->
-    <div class="form-section">
+    <div id="form-section" class="form-section">
       <div class="form-panel">
         <div class="title"><span>会员卡激活码：</span></div>
         <div class="input-activation-code"><input id="activation-code" type="text" placeholder="请输入会员卡激活码"></div>
         <div id="activate-btn" class="activate-btn"><button>激活会员</button></div>
       </div>
       <div class="form-footer"><span>官方VIP卡激活码唯一购途径，联系团队负责人购买，统一价格为298元!</span></div>
+      <div class="vip-message">您已经是VIP用户</div>
     </div>
     <!-- 客服 -->
-    <div class="group-card">
+    <div id="group-card" class="group-card">
       <div class="card-panel">
         <!-- 头像 -->
         <div class="card-avatar">
-          <img src="./image/apple-2.jpg" alt="">
+          <img id="group-card-avatar" src="" alt="">
         </div>
         <!-- 群名 -->
         <div class="card-info">
-          <div class="card-name">happy<span class="service-role">负责人</span></div>
+          <div class="card-name"><span id="group-card-name"></span><span class="service-role">负责人</span></div>
           <div class="card-level">遇到问题加微信咨询我哦！</div>
         </div>
         <!-- 申请入群 -->
@@ -54,6 +52,18 @@
       <div class="notice-footer"><span>*注：如果通过其它途径购买上当受骗，与快抖猫平台无关!</span></div>
     </div>
   </div>
+  <input id="copy-placeholder" type="text">
+  <div id="loading" class="loading visible">
+    <div class="el-loading-spinner"><svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg><span class="loading-text"></span></div>
+  </div>
+
+  <!-- 头像 -->
+  <template id="tpl-avatar-section">
+    <div>
+      <img class="img-avatar" src="" alt="">
+      <div class="user-nick"><span></span></div>
+    </div>
+  </template>
   <script src="./js/activate-vip.js"></script>
 </body>
 </html>

@@ -6,6 +6,9 @@
   <title>会员学习计划</title>
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/vip-study-plan.css">
+  <script src="./libs/md5.js"></script>
+  <script src="./libs/utils.js"></script>
+  <script src="./libs/reqwest.js"></script>
 </head>
 <body>
   <div class="main">
@@ -28,24 +31,24 @@
       </div>
     </div>
     <!-- 图文 -->
-    <div class="introduction">
-      <div class="section">
-        <div class="title">如何推广赚钱</div>
-        <div class="content">  如今无论做什么都必须很多的流量来支撑点着你的发展趋势,无论网上还是线下推广...这一公式计算是每一生意项目的的专一性具体指导;由于你要变换才可以赚到钱,但...</div>
-        <video class="video-in-introduction" src="./image/help1.mp4" controls></video>
-      </div>
-      <div class="section">
-        <div class="title">如何推广赚钱</div>
-        <div class="content">  如今无论做什么都必须很多的流量来支撑点着你的发展趋势,无论网上还是线下推广...这一公式计算是每一生意项目的的专一性具体指导;由于你要变换才可以赚到钱,但...</div>
-        <video class="video-in-introduction" src="./image/help1.mp4" controls></video>
-      </div>
-    </div>
+    <div id="introduction" class="introduction"></div>
     <!-- 学会了按钮 -->
     <button id="study-btn" class="study-btn">学会了,开始操作</button>
   </div>
   <div id="mask">
     <div class="mask-panel"></div>
   </div>
+  <div id="loading" class="loading visible">
+    <div class="el-loading-spinner"><svg viewBox="25 25 50 50" class="circular"><circle cx="50" cy="50" r="20" fill="none" class="path"></circle></svg><!----></div>
+  </div>
+
+  <template id="tpl-section">
+    <div class="section">
+      <div class="title"></div>
+      <div class="content"></div>
+      <video class="video-in-introduction" src="" controls></video>
+    </div>
+  </template>
 
   <script src="./js/vip-study-plan.js"></script>
 </body>
