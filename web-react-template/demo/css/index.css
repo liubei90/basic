@@ -1,0 +1,7 @@
+/* import nf from '../images/new-feature.png' */
+@import './ext.css';
+
+#app {
+  color: blue;
+  /* background-image: url('../images/new-feature.png'); */
+}
