@@ -42,6 +42,17 @@
     incomeTotalText.textContent = userInfo['esIncome'];
 
     var cloneElm = document.importNode(tpl.content, true);
+
+    if (!userInfo['income']) {
+      var incomeProcess = cloneElm.querySelector('.income-process');
+      incomeProcess.parentNode.removeChild(incomeProcess);
+    }
+
+    if (!userInfo['esIncome']) {
+      var incomeTotal = cloneElm.querySelector('.income-total');
+      incomeTotal.parentNode.removeChild(incomeTotal);
+    }
+
     groupIncome.innerHTML = '';
     groupIncome.appendChild(cloneElm);
   }

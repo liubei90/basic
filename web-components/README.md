@@ -9,15 +9,15 @@ http://localhost/vip-study-plan.html
 
 
 # 会员群
-http://www.lbliubei.cn/web-components/kdmh5/vip-group.html
+http://www.lbliubei.cn/web-components/kdmh5/vip-group.html?userId=1
 http://localhost/vip-group.html?userId=1
 
 # 激活会员
-http://www.lbliubei.cn/web-components/kdmh5/activate-vip.html
+http://www.lbliubei.cn/web-components/kdmh5/activate-vip.html?userId=1
 http://localhost/activate-vip.html?userId=1
 
 # 开通会员
-http://www.lbliubei.cn/web-components/kdmh5/open-vip.html
+http://www.lbliubei.cn/web-components/kdmh5/open-vip.html?userId=1
 http://localhost/open-vip.html?userId=1
 
 
