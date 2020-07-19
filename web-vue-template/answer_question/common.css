@@ -1,0 +1,17 @@
+.skeleton--animate {
+  background-color: #f2f3f5;
+  animation: skeleton-blink 1.2s ease-in-out infinite;
+}
+@keyframes skeleton-blink {
+  50% {
+    opacity: 0.6;
+  }
+}
+
+body, html {
+  height: 100%;
+}
+
+* {
+  box-sizing: border-box;
+}
