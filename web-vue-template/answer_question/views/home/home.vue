@@ -13,7 +13,7 @@ import {
   FETCH_BANNERS, 
   FETCH_RECOMMEND_TYPES,
   FETCH_RECOMMEND_COURSE } from '@/models/home';
-console.log(storeName);
+
 const { mapState, mapActions } = createNamespacedHelpers(storeName);
 import recommendCourseList from './recommendCourseList';
 
@@ -90,10 +90,16 @@ export default {
     renderRecommendType(h, item) {
       let img = null;
       if (item['title'] === '全部') {
-        img = h(Icon, { props: { 
-          name: item['src'],
-          size: 45, 
-        } });
+        img = h('div', { 
+          class: ['van-image', 'van-image--round'], 
+          style: { width: '45px', height: '45px' }
+        }, [h(Icon, { 
+          props: { 
+            name: item['src'],
+            size: 30, 
+          },
+          style: { marginTop: '8px' }
+        })]);
       } else {
         img = h(VanImage, {
             props: {
