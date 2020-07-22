@@ -18,9 +18,10 @@
 
 .img-panel {
   background-color: #252627;
-  padding: 15px 40px;
+  padding: 0 40px;
   position: relative;
   overflow: hidden;
+  line-height: 0;
 }
 
 .img-panel::after {
@@ -36,7 +37,7 @@
 
 .video-item .preview-img {
   width: 250px;
-  height: 110px;
+  height: 140px;
   max-width: 100%;
   text-align: center;
 }
@@ -45,7 +46,7 @@
   padding-top: 10px;
   font-size: 13px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: left;
   color: #ffcf00;
 }
@@ -58,7 +59,7 @@
 .problem-title {
   font-size: 15px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #f8f8f8;
 }
 
@@ -81,7 +82,7 @@
 .problem-label {
   font-size: 13px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffffff;
   display: inline-block;
   padding: 0 12px;
@@ -103,7 +104,7 @@
 .problem-expand-title {
   font-size: 14px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffcf00;
   position: relative;
 }
@@ -126,7 +127,7 @@
   margin-top: 7px;
   font-size: 12px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffffff;
   line-height: 15px;
 }
