@@ -1,4 +1,6 @@
 (function() {
+  var android = window.android || null;
+
   function createSection(item) {
     var tpl = document.querySelector('#tpl-section');
     var title = tpl.content.querySelector('.title');
@@ -11,13 +13,26 @@
     return document.importNode(tpl.content, true);
   }
 
+  function clickVideoHandler(item, event) {
+    if (item.videoUrl && android && android.playVideo) {
+      android.playVideo(item.videoUrl)
+    } else {
+      alert('url:' + item.videoUrl + ',android:' + android)
+    }
+  }
+
   function createIntroduction(list) {
     var introduction = document.querySelector('#introduction');
 
     if (Array.isArray(list)) {
       introduction.innerHTML = '';
       list.forEach(function(item) {
-        introduction.appendChild(createSection(item));
+        var sectionElm = createSection(item);
+        var vElm = sectionElm.querySelector('.img-panel');
+        vElm.addEventListener('click', function(event) {
+          clickVideoHandler(item, event);
+        });
+        introduction.appendChild(sectionElm);
       });
     }
   }

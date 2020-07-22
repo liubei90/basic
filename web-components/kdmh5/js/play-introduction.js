@@ -1,4 +1,6 @@
 (function() {
+  var android = window.android || null;
+
   function create_swipe_item(imgsrc, title) {
     var videoPlaceholder = document.querySelector('#video-placeholder');
     var previewImg = videoPlaceholder.content.querySelector('.preview-img');
@@ -11,11 +13,16 @@
   }
 
   function previewImgClickHandler(item) {
-    console.log(item.url);
-    var videoElm = creat_video_elm(item['videoUrl']);
-    if (videoElm) {
-      show_mask(true, videoElm);
+    // console.log(item.url);
+    if (item.url && android && android.playVideo) {
+      android.playVideo(item.url)
+    } else {
+      alert('url:' + item.url + ',android:' + android)
     }
+    // var videoElm = creat_video_elm(item['videoUrl']);
+    // if (videoElm) {
+      // show_mask(true, videoElm);
+    // }
   }
 
   var videoSwipe = document.querySelector('#video-swipe');
