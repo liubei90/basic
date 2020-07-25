@@ -36,9 +36,27 @@
             console.log(data);
             loading.classList.remove('visible');
             if (data && data['code'] === 200) {
-              window.location.reload();
+              show_dialog({
+                title: '温馨提示',
+                content: 'Vip会员卡开通成功',
+                btnText: '确定',
+                btnCb: function(closeMask) {
+                  if (android && android.closeWindow) {
+                    android.closeWindow();
+                  }
+                  closeMask();
+                }
+              });
             } else if (data && data['success'] === false) {
-              alert(data['message'] || '接口错误！');
+              // alert(data['message'] || '接口错误！');
+              show_dialog({
+                title: '温馨提示',
+                content: data['message'] || 'Vip会员卡开通失败',
+                btnText: '确定',
+                btnCb: function(closeMask) {
+                  closeMask();
+                }
+              })
             }
           },
           error: function(err) {
