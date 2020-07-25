@@ -39,9 +39,11 @@ http://www.lbliubei.cn/web-components/kdmh5/service-protocol.html?id=12808738152
 http://localhost/service-protocol.html?id=1280873815296352132
 
 # 绑定成功
+http://www.lbliubei.cn/web-components/kdmh5/bind-success.html
 http://localhost/bind-success.html
 
 # 绑定失败
+http://www.lbliubei.cn/web-components/kdmh5/bind-error.html
 http://localhost/bind-error.html
 
 # 接口文档

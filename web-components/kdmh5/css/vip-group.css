@@ -28,7 +28,7 @@
 .card-info {
   flex: 1;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #161616;
 }
 .card-name {
@@ -60,7 +60,7 @@
 .income-level {
   font-size: 17px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffcf00;
 }
 
@@ -89,14 +89,14 @@
   text-align: right;
   font-size: 16px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffffff;
 }
 
 .income-total {
   font-size: 13px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffffff;
   margin-top: 9px;
 }
@@ -110,7 +110,7 @@
 .group-level-title {
   font-size: 17px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffcf00;
 }
 
@@ -123,14 +123,14 @@
 .group-level .title {
   font-size: 17px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffffff;
 }
 
 .group-level .detail {
   font-size: 14px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffffff;
   line-height: 1.75em;
 }

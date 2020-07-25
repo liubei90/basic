@@ -22,7 +22,7 @@
 .card-info {
   flex: 1;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #FFFFFF;
   position: relative;
   top: -3px;
@@ -68,7 +68,7 @@
 .advantage-section .title {
   font-size: 15px;
   font-family: PingFang SC Medium, PingFang SC Medium-Medium;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: left;
   color: #ffffff;
   line-height: 20px;
@@ -78,7 +78,7 @@
   margin-top: 13px;
   font-size: 13px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: left;
   color: #bdbfca;
   line-height: 20px;
@@ -91,7 +91,7 @@
 .extend-secion .title {
   font-size: 15px;
   font-family: PingFang SC Medium, PingFang SC Medium-Medium;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: left;
   color: #ffffff;
   line-height: 20px;
@@ -111,7 +111,7 @@
   margin: 10px 0;
   font-size: 13px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: center;
   color: #ffffff;
   line-height: 20px;
@@ -125,7 +125,7 @@
 .service-protocol {
   font-size: 13px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: center;
   color: #bdbfca;
   line-height: 20px;

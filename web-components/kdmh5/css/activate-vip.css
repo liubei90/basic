@@ -16,7 +16,6 @@
 .user-nick {
   font-size: 15px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
   color: #ffffff;
 }
 
@@ -50,7 +49,7 @@
   text-align: left;
   font-size: 15px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #ffffff;
 }
 
@@ -68,7 +67,7 @@
   font-size: 13px;
   background-color: #FFFFFF;
   color: #3A3C51;
-  font-weight: bold;
+  /* font-weight: bold; */
 }
 
 .input-activation-code input::-webkit-input-placeholder {
@@ -97,7 +96,7 @@
   margin: 11px 15px 0;
   font-size: 12px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #bdbfca;
   line-height: 18px;
 }
@@ -126,7 +125,7 @@
 .card-info {
   flex: 1;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #FFFFFF;
 }
 .card-name {
@@ -167,7 +166,7 @@
   margin: 20px 15px 0;
   font-size: 12px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: left;
   color: #bdbfca;
   line-height: 18px;

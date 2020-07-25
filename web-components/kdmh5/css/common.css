@@ -67,7 +67,7 @@ video::-webkit-media-controls-panel {
   border: none;
   border-radius: 3px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: center;
 }
 .common-btn:active {

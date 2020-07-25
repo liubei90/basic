@@ -76,28 +76,28 @@
 .txt-kuai {
   font-size: 54px;
   font-family: Lantinghei SC Demibold, Lantinghei SC Demibold-Demibold;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #2dd0ff;
 }
 
 .txt-dou {
   font-size: 54px;
   font-family: Lantinghei SC Demibold, Lantinghei SC Demibold-Demibold;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #FFD200;
 }
 
 .txt-mao {
   font-size: 54px;
   font-family: Lantinghei SC Demibold, Lantinghei SC Demibold-Demibold;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #FF004E;
 }
 
 .txt-hyxxjh {
   font-size: 41px;
   font-family: Lantinghei SC Demibold, Lantinghei SC Demibold-Demibold;
-  font-weight: bold;
+  /* font-weight: bold; */
   color: #FFFFFF;
 }
 
@@ -117,7 +117,7 @@
 .introduction .title {
   font-size: 16px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: center;
   color: #ffffff;
 }
@@ -126,7 +126,7 @@
   margin-top: 10px;
   font-size: 13px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: left;
   color: #ffffff;
   line-height: 24px;
@@ -148,7 +148,7 @@
   border-radius: 3px;
   font-size: 13px;
   font-family: PingFang SC Regular, PingFang SC Regular-Regular;
-  font-weight: bold;
+  /* font-weight: bold; */
   text-align: center;
   color: #151515;
   margin-left: 50%;
