@@ -18,7 +18,8 @@
 
 .img-panel {
   background-color: #252627;
-  padding: 0 40px;
+  /* padding: 0 40px; */
+  padding: 0;
   position: relative;
   overflow: hidden;
   line-height: 0;

@@ -1,3 +1,4 @@
+
 # 玩法介绍
 http://www.lbliubei.cn/web-components/kdmh5/play-introduction.html
 http://localhost/play-introduction.html
@@ -40,3 +41,7 @@ http://localhost/service-protocol.html?id=1280873815296352132
 
 # 接口文档
 http://47.115.51.206:4999/web/#/4?page_id=49
+
+# 
+https://app.mockplus.cn/s/nIjZkid1t4P
+https://lanhuapp.com/url/8Qpba-9r04U

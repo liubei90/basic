@@ -62,10 +62,7 @@
       console.log(data);
       if (data && data['code'] === 200 && data['data']) {
         loading.classList.remove('visible');
-        // userInfo = data['data'];
-        // createAvatarSection(data['data']);
-        // createFormSection(data['data']);
-        // createGroupCard(data['data']);
+        createGroupCard(data['data']);
       } else if (data && data['success'] === false) {
         showAlert(data['message'] || '接口错误！')
       }
