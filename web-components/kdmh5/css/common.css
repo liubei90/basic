@@ -13,6 +13,10 @@ html, body {
   box-sizing: border-box;
 }
 
+.display-none {
+  display: none;
+}
+
 #copy-placeholder {
   position: fixed;
   top: -200%;
@@ -26,7 +30,7 @@ html, body {
   right: 0;
   /* opacity: 0.9; */
   background-color: rgba(0, 0, 0, 0.9);
-  display: none;
+  /* display: none; */
 }
 
 #mask.visible {
@@ -39,6 +43,10 @@ html, body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+}
+
+#mask .mask-panel > * {
+  margin: 0 auto;
 }
 
 .video-in-mask {
@@ -165,4 +173,31 @@ video::-webkit-media-controls-panel {
     stroke-dasharray: 90, 150;
     stroke-dashoffset: -120px
   }
+}
+
+.dialog-container {
+  width: 290px;
+  max-height: 200px;
+  border-radius: 15px;
+  background-color: #ffffff;
+  font-size: 15px;
+  color: #161616;
+}
+
+.dialog-header {
+  height: 50px;
+  text-align: center;
+  padding-top: 15px;
+}
+.dialog-content {
+  padding: 0 20px;
+  min-height: 50px;
+}
+.dialog-footer {
+  text-align: center;
+  padding: 10px 0;
+}
+
+.dialog-footer button {
+  padding: 8px 26px;
 }

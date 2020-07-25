@@ -1,4 +1,5 @@
 (function() {
+  var android = window.android;
   function createAvatarSection(userInfo) {
     var tpl = document.querySelector('#tpl-avatar-section');
     var avatarSection = document.querySelector('#avatar-section');
@@ -87,6 +88,22 @@
     loadingText.textContent = msg;
   }
 
+  function showIsVip(userInfo) {
+    if (userInfo && userInfo['ifVip']) {
+      show_dialog({
+        title: '温馨提示',
+        content: 'Vip会员卡开通成功',
+        btnText: '确定',
+        btnCb: function(closeMask) {
+          if (android && android.closeWindow) {
+            android.closeWindow();
+          }
+          closeMask();
+        }
+      });
+    }
+  }
+
   reqwest({
     url: basic_utils.domain + '/api/H5/getUserInfo?' + basic_utils.createSignQuery({ userId: userId }),
     method: 'post',
@@ -99,6 +116,7 @@
         createAvatarSection(data['data']);
         createFormSection(data['data']);
         createGroupCard(data['data']);
+        showIsVip(data['data']);
       } else if (data && data['success'] === false) {
         showAlert(data['message'] || '接口错误！')
       }
