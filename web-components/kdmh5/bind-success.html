@@ -6,6 +6,11 @@
   <title>快抖猫</title>
   <link rel="stylesheet" href="./css/common.css">
   <link rel="stylesheet" href="./css/bind-success.css">
+  <script src="./libs/md5.js"></script>
+  <script src="./libs/utils.js"></script>
+  <script src="./libs/reqwest.js"></script>
+  <script src="./js/mask.js"></script>
+  <script src="./js/dialog.js"></script>
 </head>
 <body>
   <div class="main">
@@ -16,7 +21,8 @@
       <div class="info">返回快抖猫首页->抖音号列表即可查看</div>
     </div>
     <!-- 推荐列表 -->
-    <div class="suggestion-list">
+    <div id="suggestion-list" class="suggestion-list"></div>
+    <template id="tpl-suggestion-item">
       <div class="suggestion-item">
         <div class="s-preview">
           <img class="s-preview-image" src="./image/gou.png" alt="">
@@ -29,19 +35,7 @@
           <button class="common-btn">查看</button>
         </div>
       </div>
-      <div class="suggestion-item">
-        <div class="s-preview">
-          <img class="s-preview-image" src="./image/gou.png" alt="">
-        </div>
-        <div class="s-info">
-          <div class="s-name">心理测评平台</div>
-          <span class="s-tag">测评</span>
-        </div>
-        <div class="s-opt">
-          <button class="common-btn">查看</button>
-        </div>
-      </div>
-    </div>
+    </template>
   </div>
   <script src="./js/bind-success.js"></script>
 </body>
