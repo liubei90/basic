@@ -12,7 +12,7 @@
       },
     },
     render(h, context) {
-      const { props, $style } = context;
+      const { props, $style, listeners } = context;
       console.log(context);
 
       function renderSkeleton() {
@@ -35,6 +35,13 @@
             desc: item['detail'],
             title: item['title'],
             thumb: item['src']
+          },
+          on: {
+            click: () => {
+              if (listeners && listeners['nav']) {
+                listeners['nav'](item['id'])
+              }
+            }
           }
         });
       }

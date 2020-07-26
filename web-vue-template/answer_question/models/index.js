@@ -2,6 +2,8 @@ import Vue from 'vue';
 import Vuex from 'vuex';
 import { storeName as homeStoreName, store as homeStore } from './home';
 import { storeName as courseStoreName, store as courseStore } from './course';
+import { storeName as questionStoreName, store as questionStore } from './question';
+
 
 Vue.use(Vuex);
 
@@ -31,6 +33,10 @@ const store = new Vuex.Store({
     [courseStoreName]: {
       namespaced: true,
       ...courseStore
+    },
+    [questionStoreName]: {
+      namespaced: true,
+      ...questionStore
     },
   },
 });

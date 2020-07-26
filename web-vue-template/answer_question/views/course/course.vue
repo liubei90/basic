@@ -41,6 +41,15 @@ export default {
   },
   methods: {
     ...mapActions([FETCH_COURSE_DETAIL]),
+    handleStartAnswerQuestion() {
+      this.$router.push({
+        name: 'answer-question',
+        params: {
+          courseId: this.id,
+          questionId: '111',
+        }
+      });
+    },
     renderDetailSkeleton(h) {
       return h('div', { class: [this.$style['coutse-detail-skeleton']] }, [
         this.renderCell(h, '考试题目', ' ', { class: [this.$style['coutse-detail-skeleton-item']] }),
@@ -77,7 +86,12 @@ export default {
         return h('div', { class: [this.$style['course-opteration']] }, [
           h(Button, { 
             props: { type: 'primary' },
-            class: [this.$style['course-opteration-btn']] }, ['开始答题'])
+            class: [this.$style['course-opteration-btn']],
+            on: {
+              click: () => {
+                this.handleStartAnswerQuestion();
+              }
+            } }, ['开始答题'])
         ]);
       }
     }

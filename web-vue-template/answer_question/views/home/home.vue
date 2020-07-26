@@ -38,6 +38,14 @@ export default {
   },
   methods: {
     ...mapActions([ FETCH_BANNERS, FETCH_RECOMMEND_TYPES, FETCH_RECOMMEND_COURSE ]),
+    handleNav(v) {
+      this.$router.push({
+        name: 'coutse-detail',
+        params: {
+          id: '123',
+        }
+      });
+    },
     renderBannerSkeleton(h) {
       return h('div', {
         class: [this.$style['banner-skeketon']]
@@ -117,7 +125,9 @@ export default {
       return h(recommendCourseList, {
         props: { courseList: this.recommendCourse },
         on: {
-          nav: (v) => { console.log(v) }
+          nav: (v) => { 
+            this.handleNav(v); 
+          }
         }
       });
     },

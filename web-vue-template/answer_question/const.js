@@ -1,0 +1,2 @@
+export const QUESTION_SINGLE_CHOICE = 1;
+export const QUESTION_MULTIPLE_CHOICE = 1;
