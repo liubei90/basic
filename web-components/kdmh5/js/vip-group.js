@@ -1,4 +1,17 @@
 (function() {
+  function selectText(textbox, startIndex, stopIndex) {
+    if (textbox.createTextRange) {//ie
+      var range = textbox.createTextRange();
+      range.collapse(true);
+      range.moveStart('character', startIndex);//起始光标
+      range.moveEnd('character', stopIndex - startIndex);//结束光标
+      range.select();//不兼容苹果
+    } else {//firefox/chrome
+      textbox.setSelectionRange(startIndex, stopIndex);
+      textbox.focus();
+    }
+  }
+
   // 创建头像
   function createGroupCard(principalInfo) {
     var groupCard = document.querySelector('#group-card');
@@ -13,15 +26,31 @@
     var cloneElm = document.importNode(tpl.content, true);
     var btn = cloneElm.querySelector('.card-btn');
     var copyPlaceholder = document.querySelector('#copy-placeholder');
+    var userChatNo = principalInfo['companyUserWechatNo'];
 
-    copyPlaceholder.value = principalInfo['companyUserWechatNo'];
+    copyPlaceholder.value = userChatNo;
     btn.addEventListener('click', function() {
       copyPlaceholder.select();
+      // 兼容ios选择文本
+      selectText(copyPlaceholder, 0, userChatNo.length);
+      var msg = '';
       if (document.execCommand('copy')) {
-        alert('微信号复制成功！');
+        msg = '微信号复制成功！去联系客服入群吧';
       } else {
-        alert('微信号:' + principalInfo['companyUserWechatNo']);
+        msg = '微信号:' + userChatNo + '去联系客服入群吧';
       }
+
+      if (msg) {
+        show_dialog({
+          title: '温馨提示',
+          content: msg,
+          btnText: '确定',
+          btnCb: function(closeMask) {
+            closeMask();
+          }
+        });
+      }
+      copyPlaceholder.blur();
     })
 
     groupCard.innerHTML = '';
