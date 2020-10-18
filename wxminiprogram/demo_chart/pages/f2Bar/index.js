@@ -42,8 +42,12 @@ Component({
 
         const options = {
           x: {
-            tickCount: 50
-          }
+            type: 'cat',
+            // tickCount: 50,
+            min: 0, // 设置刚开始显示的区间 0-5
+            max: 5
+          },
+          
         };
         chart.source(data, options);
         chart.interval().position('x*y').color('z').adjust({
