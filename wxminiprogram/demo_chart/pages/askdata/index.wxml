@@ -1,0 +1,38 @@
+<view class="container">
+  <view>
+    <view>这里即将有一个搜索框 + 取消按钮</view>
+    <view>这里是一些提示语句，可能有很多行</view>
+    <view>这里是一些提示语句，可能有很多行</view>
+    <view>这里是一些提示语句，可能有很多行</view>
+    <view>这里是一些提示语句，可能有很多行</view>
+  </view>
+  <view class="askdata-chart-panel">
+    <!-- <echarts-bar
+      class="echart_bar askdata-chart-item" 
+      dim-names="{{dims}}"
+      indi-names="{{indis}}"
+      chart-datas="{{chartDatas}}"
+      style="width: 100%; height: 500rpx;"></echarts-bar> -->
+
+    <f2-bar
+      class="f2_bar askdata-chart-item" 
+      dim-names="{{dims}}"
+      indi-names="{{indis}}"
+      chart-datas="{{chartDatas}}"
+      style="width: 100%; height: 500rpx;"></f2-bar>
+    <!-- <echarts-bar 
+      wx:for="{{indis}}" 
+      wx:key="{{item}}"
+      class="chart_{{item}} askdata-chart-item" 
+      dim-names="{{}}"
+      indi-name="{{item}}"
+      chart-datas="{{chartDatas}}"
+      style="width: 100%; height: 200px;"></echarts-bar> -->
+    <!-- <f2-bar
+      wx:for="{{chartDatas}}" 
+      wx:key="{{item.unionkey}}"
+      class="chart_{{item.unionkey}} askdata-chart-item" 
+      chart-data="{{item}}"
+      style="width: 100%; height: 500rpx;"></f2-bar> -->
+  </view>
+</view>

@@ -1,0 +1,6 @@
+{
+  "usingComponents": {
+    "echarts-bar": "../echartsBar/index",
+    "f2-bar": "../f2Bar/index"
+  }
+}

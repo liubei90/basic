@@ -1,0 +1,10 @@
+.askdata-chart-panel {
+  width: 100%;
+  flex: 1 0 1px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* .askdata-chart-item {
+  
+} */

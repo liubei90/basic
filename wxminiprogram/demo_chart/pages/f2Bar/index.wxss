@@ -1,0 +1,9 @@
+.f2echart-container {
+  width: 100%;
+  height: 100%;
+}
+
+.f2-chart {
+  width: 100%;
+  height: 100%;
+}
