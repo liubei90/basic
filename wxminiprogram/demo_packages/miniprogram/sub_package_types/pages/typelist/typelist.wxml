@@ -1,0 +1,6 @@
+<view class="container">
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <tab-bar default-active="/sub_package_types/pages/typelist/typelist"></tab-bar>
+</view>

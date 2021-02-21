@@ -1,0 +1,7 @@
+<view class="container">
+  <view class="usermotto">
+    <text class="user-motto">{{motto}}</text>
+  </view>
+  <van-button>这是van-button</van-button>
+  <tab-bar default-active="/sub_package_my/pages/my/my"></tab-bar>
+</view>
