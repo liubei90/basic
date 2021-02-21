@@ -1,0 +1,5 @@
+<!--index.wxml-->
+<view class="container">
+  <text >{{msg}}</text>
+  <van-button>hi</van-button>
+</view>
