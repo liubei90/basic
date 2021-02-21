@@ -62,14 +62,8 @@
 
 <style module>
 .question-sibling {
-  width: 90%;
-  margin: 20px auto 0;
+  composes: section-context from '../../common.css';
   padding: 0 10px;
-  background-color: #ffffff;
-  overflow: hidden;
-  border-radius: 8px;
-  font-size: 12px;
-  color: #969696;
 }
 .question-sibling-item {
   margin: 10px 0;

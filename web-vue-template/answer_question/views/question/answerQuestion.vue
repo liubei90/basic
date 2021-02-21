@@ -33,6 +33,7 @@
     data() {
       return {
         show_answer_btn: true,
+        show_answer: false,
         loading_answer: false,
       };
     },
@@ -89,6 +90,7 @@
         SET_ANSWER]),
       init() {
         this.show_answer_btn = true;
+        this.show_answer = false;
         this.loading_answer = false;
         this[FETCH_COURSE_DETAIL]({ id: this.courseId });
         this[FETCH_QUESTION_DETAIL]({ id: this.questionId });
@@ -122,6 +124,7 @@
               this[FETCH_QUESTION_ANSWER]({ id: this.questionId }).then(() => {
                 this.loading_answer = false;
                 this.show_answer_btn = false;
+                this.show_answer = true;
               });
             }
           }
@@ -156,7 +159,9 @@
             }
           } 
         }),
-        // h(QuestionAnalyze, { props: { questionDetail: this.questionDetail } }),
+        this.show_answer ? 
+          h(QuestionAnalyze, { props: { questionAnswer: this.questionAnswer } }) :
+          null,
       ]);
     },
   };

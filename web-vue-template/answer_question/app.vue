@@ -1,6 +1,5 @@
 <script>
   import { mapActions, mapState } from 'vuex';
-  import { COMMON_FETCH_USER_INFO } from '@/models/index'
   import { Tabbar, TabbarItem } from 'vant';
 
   export default {
@@ -15,18 +14,23 @@
     },
     computed: {
       ...mapState({
-        userInfo: state => state.userInfo,
+        // userInfo: state => state.userInfo,
       }),
+      showTab() {
+        return !!this.$route.meta['showTab'];
+      },
+      activePath() {
+        return this.$route['path'];
+      },
     },
-    methods: {
-      ...mapActions([COMMON_FETCH_USER_INFO]),
-      changeActive(v) {
-        this.active = v;
-        this.$router.replace(v);
-      }
+    watch: {
+      activePath() {
+        if (this.tabs.some(item => item['path'] === this.activePath)) {
+          this.active = this.activePath;
+        };
+      },
     },
     created() {
-      this[COMMON_FETCH_USER_INFO]();
     },
     render(h) {
       const routerView = h('router-view');
@@ -47,17 +51,27 @@
         }
       }, [ tabItems ]);
       return h('div', {
-        class: ['main'],
-      }, [routerView, tab]);
-    }
+        class: [this.$style['main'], this.showTab ? this.$style['main_fix-bottom'] : ''],
+      }, [routerView, this.showTab ? tab : null]);
+    },
+    methods: {
+      changeActive(v) {
+        this.active = v;
+        if (this.$route.path !== v) {
+          this.$router.replace(v);
+        }
+      }
+    },
   }
 </script>
 
-<style>
-  :global(.main) {
-    padding-bottom: 70px;
+<style module>
+  .main {
     height: 100%;
     background-color: #f2f3f5;
     overflow-y: auto;
+  }
+  .main_fix-bottom {
+    padding-bottom: 70px;
   }
 </style>

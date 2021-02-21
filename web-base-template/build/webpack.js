@@ -2,6 +2,10 @@ var webpack = require('webpack');
 var merge = require('webpack-merge').merge;
 
 
+function mergeOptions(options) {
+  return merge({}, ...options);
+}
+
 function doWebpack(...options) {
   var isRun = true;
 
@@ -9,7 +13,7 @@ function doWebpack(...options) {
     isRun = options.pop();
   }
 
-  var webpackConfig = merge({}, ...options);
+  var webpackConfig = mergeOptions(options);
   console.log(JSON.stringify(webpackConfig, null, 4));
   var compiler = webpack(webpackConfig);
 
@@ -33,5 +37,6 @@ function doWebpack(...options) {
 }
 
 module.exports = {
-  doWebpack: doWebpack
+  doWebpack: doWebpack,
+  mergeOptions: mergeOptions,
 }

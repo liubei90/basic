@@ -73,12 +73,7 @@
 
 <style module>
 .single-choice {
-  width: 90%;
-  margin: 20px auto 0;
-  padding: 10px;
-  background-color: #ffffff;
-  overflow: hidden;
-  border-radius: 8px;
+  composes: section-context from '../../../common.css';
 }
 .single-choice-type {
   margin-left: 5px;

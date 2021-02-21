@@ -15,3 +15,13 @@ body, html {
 * {
   box-sizing: border-box;
 }
+
+/* 内容区 圆角白底框 */
+.section-context {
+  width: 90%;
+  margin: 20px auto 0;
+  padding: 10px;
+  background-color: #ffffff;
+  overflow: hidden;
+  border-radius: 8px;
+}
