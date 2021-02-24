@@ -1,7 +1,7 @@
 <view class="container">
   <view class="section">
     <text class="title">scope.userInfo 用户信息</text>
-    <button open-type="getUserInfo">open-type=getUserInfo</button>
+    <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfoByOpenTypeBtn">open-type=getUserInfo</button>
     <!-- 未获取授权直接调用函数wx.getUserInfo不能弹出授权框 -->
     <button bind:tap="onGetUserInfo">wx.getUserInfo</button>
     <!-- authorize('scope.userInfo')的方式不能弹出授权框 -->
