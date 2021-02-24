@@ -1,0 +1,17 @@
+<view class="container">
+  <view class="section">
+    <text class="title">scope.userInfo 用户信息</text>
+    <button open-type="getUserInfo">open-type=getUserInfo</button>
+    <!-- 未获取授权直接调用函数wx.getUserInfo不能弹出授权框 -->
+    <button bind:tap="onGetUserInfo">wx.getUserInfo</button>
+    <!-- authorize('scope.userInfo')的方式不能弹出授权框 -->
+    <button bind:tap="authorize" data-scope="scope.userInfo">authorize('scope.userInfo')</button>
+  </view>
+  <view class="section">
+    <text class="title">scope.userLocation 地理位置</text>
+    <button bind:tap="onGetLocation">wx.getLocation</button>
+    <button bind:tap="onChooseLocation">wx.chooseLocation</button>
+    <button bind:tap="authorize" data-scope="scope.userLocation">authorize('scope.userLocation')</button>
+  </view>
+  <tab-bar default-active="/sub_package_authorize/pages/authsetting/authsetting"></tab-bar>
+</view>
