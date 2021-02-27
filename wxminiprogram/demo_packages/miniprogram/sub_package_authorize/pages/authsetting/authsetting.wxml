@@ -1,17 +1,57 @@
-<view class="container">
-  <view class="section">
-    <text class="title">scope.userInfo 用户信息</text>
-    <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfoByOpenTypeBtn">open-type=getUserInfo</button>
-    <!-- 未获取授权直接调用函数wx.getUserInfo不能弹出授权框 -->
-    <button bind:tap="onGetUserInfo">wx.getUserInfo</button>
-    <!-- authorize('scope.userInfo')的方式不能弹出授权框 -->
-    <button bind:tap="authorize" data-scope="scope.userInfo">authorize('scope.userInfo')</button>
-  </view>
-  <view class="section">
-    <text class="title">scope.userLocation 地理位置</text>
-    <button bind:tap="onGetLocation">wx.getLocation</button>
-    <button bind:tap="onChooseLocation">wx.chooseLocation</button>
-    <button bind:tap="authorize" data-scope="scope.userLocation">authorize('scope.userLocation')</button>
-  </view>
+<view>
+  <scroll-view style="height: 600rpx" scroll-y="true">
+    <view class="section">
+      <text class="title">scope.userInfo 用户信息</text>
+      <button open-type="getUserInfo" bindgetuserinfo="onGetUserInfoByOpenTypeBtn">open-type=getUserInfo</button>
+      <!-- 未获取授权直接调用函数wx.getUserInfo不能弹出授权框 -->
+      <button bind:tap="onGetUserInfo">wx.getUserInfo</button>
+      <!-- authorize('scope.userInfo')的方式不能弹出授权框 -->
+      <button bind:tap="authorize" data-scope="scope.userInfo">authorize('scope.userInfo')</button>
+    </view>
+    <view class="section">
+      <text class="title">scope.userLocation 地理位置</text>
+      <button bind:tap="onGetLocation">wx.getLocation</button>
+      <button bind:tap="onChooseLocation">wx.chooseLocation</button>
+      <button bind:tap="onStartLocationUpdate">wx.startLocationUpdate</button>
+      <button bind:tap="authorize" data-scope="scope.userLocation">authorize('scope.userLocation')</button>
+    </view>
+    <view class="section">
+      <text class="title">scope.userLocationBackground 地理位置</text>
+      <button bind:tap="onStartLocationUpdateBackground">wx.startLocationUpdateBackground</button>
+      <button bind:tap="authorize" data-scope="scope.userLocationBackground">authorize('scope.userLocationBackground')</button>
+    </view>
+
+    <view class="section">
+      <text class="title">scope.werun 微信运动步数</text>
+      <button bind:tap="onGetWeRunData">wx.getWeRunData</button>
+      <button bind:tap="authorize" data-scope="scope.werun">authorize('scope.werun')</button>
+    </view>
+
+    <view class="section">
+      <text class="title">scope.record 录音功能</text>
+      <button bind:tap="onStartRecord">startRecord</button>
+      <button bind:tap="authorize" data-scope="scope.record">authorize('scope.record')</button>
+    </view>
+
+    <view class="section">
+      <text class="title">scope.writePhotosAlbum 保存到相册</text>
+      <button bind:tap="onSaveImageToPhotosAlbum">wx.saveImageToPhotosAlbum</button>
+      <button bind:tap="authorize" data-scope="scope.writePhotosAlbum">authorize('scope.writePhotosAlbum')</button>
+    </view>
+
+    <view class="section">
+      <text class="title">scope.camera 摄像头</text>
+      <!-- <camera device-position="back" flash="off" style="width: 100%; height: 300px;"></camera> -->
+      <!-- <button type="primary" bindtap="takePhoto">拍照</button> -->
+      <button bind:tap="authorize" data-scope="scope.camera">authorize('scope.camera')</button>
+      <image mode="widthFix" src="{{imgsrc}}"></image>
+    </view>
+
+    <view>
+      <button open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">getPhoneNumber</button>
+    </view>
+
+  </scroll-view>
+
   <tab-bar default-active="/sub_package_authorize/pages/authsetting/authsetting"></tab-bar>
 </view>

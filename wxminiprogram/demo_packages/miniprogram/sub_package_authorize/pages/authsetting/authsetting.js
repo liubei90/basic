@@ -1,6 +1,7 @@
 Page({
   data: {
     motto: 'authsetting',
+    imgsrc: '',
   },
   onLoad() {
   },
@@ -8,6 +9,19 @@ Page({
     this.consoleSetting();
   },
 
+  authFuncCallback() {
+    return {
+      success(res) {
+        console.dir(res);
+      },
+      fail(err) {
+        console.error(err);
+      },
+      complete: () => {
+        this.consoleSetting();
+      }
+    }
+  },
   consoleSetting() {
     wx.getSetting({
       withSubscriptions: true,
@@ -126,16 +140,39 @@ Page({
     });
   },
   onChooseLocation() {
-    wx.chooseLocation({
-      success(res) {
-        console.dir(res);
+    wx.chooseLocation(this.authFuncCallback());
+  },
+  onStartLocationUpdate() {
+    wx.startLocationUpdate(this.authFuncCallback());
+  },
+  onStartLocationUpdateBackground() {
+    wx.startLocationUpdateBackground(this.authFuncCallback());
+  },
+  onGetWeRunData() {
+    wx.getWeRunData(this.authFuncCallback());
+  },
+  onStartRecord() {
+    let r = wx.getRecorderManager();
+    r.start();
+  },
+  onSaveImageToPhotosAlbum() {
+    wx.saveImageToPhotosAlbum(this.authFuncCallback());
+  },
+  takePhoto() {
+    const ctx = wx.createCameraContext()
+    ctx.takePhoto({
+      quality: 'high',
+      success: (res) => {
+        this.setData({
+          imgsrc: res.tempImagePath
+        })
       },
       fail(err) {
         console.error(err);
-      },
-      complete: () => {
-        this.consoleSetting();
       }
-    });
+    })
+  },
+  getPhoneNumber(res) {
+    console.log(res);
   },
 })

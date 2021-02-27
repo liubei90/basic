@@ -64,5 +64,6 @@
     "scope.userLocation": {
       "desc": "获取定位用来进行更好的匹配权益"
     }
-  }
+  },
+  "requiredBackgroundModes": ["location"]
 }
