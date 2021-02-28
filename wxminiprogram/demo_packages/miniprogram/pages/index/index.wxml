@@ -2,6 +2,7 @@
 <view class="container">
   <view class="usermotto">
     <text class="user-motto">{{motto}}</text>
+    <icon-btn></icon-btn>
   </view>
   <tab-bar default-active="/pages/index/index"></tab-bar>
 </view>
