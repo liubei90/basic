@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="container">
   <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+    <text class="user-motto" bind:tap="redirect">{{motto}}</text>
     <icon-btn></icon-btn>
   </view>
   <tab-bar default-active="/pages/index/index"></tab-bar>

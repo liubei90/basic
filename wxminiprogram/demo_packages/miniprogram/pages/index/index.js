@@ -45,4 +45,16 @@ Page({
   onTabItemTap(options) {
     console.log('Page index onTabItemTap', options)
   },
+
+  redirect() {
+    wx.redirectTo({
+      url: '../empty/index',
+      success: () => {
+        console.log('redirectTo empty');
+      },
+      fail: (err) => {
+        console.error(err);
+      }
+    });
+  }
 })

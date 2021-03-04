@@ -1,7 +1,8 @@
 {
   "pages":[
     "pages/index/index",
-    "pages/noop/noop"
+    "pages/noop/noop",
+    "pages/empty/index"
   ],
   "subpackages": [
     {
