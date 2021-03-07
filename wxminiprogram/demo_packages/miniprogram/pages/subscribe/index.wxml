@@ -1,0 +1,6 @@
+<view>
+  <button type="primary" bindtap="handleDoSth">
+    某个功能
+  </button>
+  <text >点击后弹窗提示一次性订阅消息授权</text>>
+</view>

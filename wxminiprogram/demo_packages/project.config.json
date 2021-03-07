@@ -76,6 +76,12 @@
           "pathName": "pages/index/index",
           "query": "brandid=123",
           "scene": 1011
+        },
+        {
+          "name": "pages/subscribe/index",
+          "pathName": "pages/subscribe/index",
+          "query": "brandid=123",
+          "scene": null
         }
       ]
     }

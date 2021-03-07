@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/noop/noop",
-    "pages/empty/index"
+    "pages/empty/index",
+    "pages/subscribe/index"
   ],
   "subpackages": [
     {
