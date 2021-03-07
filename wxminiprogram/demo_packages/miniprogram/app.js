@@ -1,10 +1,13 @@
 // app.js
 App({
+  globalUserinfo: null,
   onLaunch(options) {
     console.log('App onLaunch', options);
+    console.log('getCurrentPages', getCurrentPages());
   },
   onShow(options) {
     console.log('App onShow', options);
+    console.log('getCurrentPages', getCurrentPages());
   },
   onHide(options) {
     console.log('App onHide', options);

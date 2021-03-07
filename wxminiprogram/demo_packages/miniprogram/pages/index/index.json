@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "icon-btn": "../../components/icon_btn"
+    "icon-btn": "../../components/icon_btn",
+    "userinfo": "../../components/wx_userinfo"
   }
 }

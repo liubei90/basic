@@ -68,7 +68,14 @@
         {
           "name": "sub_package_authorize/pages/authsetting/authsetting",
           "pathName": "sub_package_authorize/pages/authsetting/authsetting",
+          "query": "",
           "scene": null
+        },
+        {
+          "name": "pages/index/index",
+          "pathName": "pages/index/index",
+          "query": "brandid=123",
+          "scene": 1011
         }
       ]
     }

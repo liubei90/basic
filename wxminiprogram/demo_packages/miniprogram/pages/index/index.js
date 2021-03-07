@@ -46,6 +46,10 @@ Page({
     console.log('Page index onTabItemTap', options)
   },
 
+  handleLogin() {
+    console.log('handleLogin', app.globalUserinfo);
+  },
+
   redirect() {
     wx.redirectTo({
       url: '../empty/index',

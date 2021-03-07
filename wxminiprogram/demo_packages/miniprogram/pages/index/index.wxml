@@ -6,3 +6,5 @@
   </view>
   <tab-bar default-active="/pages/index/index"></tab-bar>
 </view>
+
+<userinfo bind:login="handleLogin"></userinfo>
