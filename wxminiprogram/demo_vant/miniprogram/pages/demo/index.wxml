@@ -1,0 +1,10 @@
+<!--index.wxml-->
+<view class="container">
+  <!--  -->
+  <van-cell-group title="订阅消息">
+    <van-cell title="点击订阅" value="{{subscribe_result}}" bind:tap="handleSubscribe"/>
+    <van-cell title="发送订阅消息" value="{{send_subscribe_result}}" border="{{ false }}" bind:tap="handleSendSubscribe"/>
+  </van-cell-group>
+</view>
+
+<user-info bind:userinfo="handleUserinfo"></user-info>

@@ -1,0 +1,47 @@
+<!-- index.wxml -->
+<!-- 顶部搜索 -->
+<view id="search-section" class="search-section" style="padding-top: {{statusBarHeight}}px; background-color: rgba(255, 255, 255, {{searchBKC}});">
+  <van-search placeholder="请输入搜索关键词" background="rgba(0, 0, 0, 0)" shape="round" disabled="true" />
+</view>
+<!-- <scroll-view id="scroller" class="container" scroll-y="true" refresher-enabled="{{true}}" refresher-threshold="{{80}}" show-scrollbar="false" refresher-triggered="{{triggered}}" scroll-top="{{scrollTop}}" bindrefresherrefresh="handleRefresherRefresh" bindrefresherabort="handleRefreshAbort" bindscroll="handlePageScroll"> -->
+<view class="container">
+  <!-- banner -->
+  <swiper class="banner-section" indicator-dots="true">
+    <swiper-item>
+      <image src="../../assets/images/VCG1.jpg" />
+    </swiper-item>
+    <swiper-item>
+      <image src="../../assets/images/VCG2.jpg" />
+    </swiper-item>
+    <swiper-item>
+      <image src="../../assets/images/VCG3.jpg" />
+    </swiper-item>
+  </swiper>
+  <!-- 快捷入口 -->
+  <view class="shortcut-section">
+    <view class="flex_1 inline-flex flex_column flex_align_items_center">
+      <image src="../../assets/images/I1.jpg" />
+      <view>权益</view>
+    </view>
+    <view class="flex_1 inline-flex flex_column flex_align_items_center">
+      <image src="../../assets/images/I2.jpg" />
+      <view>优惠权</view>
+    </view>
+    <view class="flex_1 inline-flex flex_column flex_align_items_center">
+      <image src="../../assets/images/I3.jpg" />
+      <view>君邻大院</view>
+    </view>
+  </view>
+  <!-- 推荐列表 -->
+  <view id="suggestion-section" class="suggestion-section">
+    <view id="suggestion_filter" class="suggestion-filter {{isFix ? 'fix' : 'rel'}}" style="top: {{filterTop}}px; height: 40px; background-color: red;">
+      <van-dropdown-menu >
+        <van-dropdown-item value="{{ cityValue }}" options="{{ citys }}" bind:open="handleDropdownOpen" />
+        <van-dropdown-item value="{{ quanyiValue }}" options="{{ quanyi }}" bind:open="handleDropdownOpen" />
+        <van-dropdown-item value="{{ typeValue }}" options="{{ types }}" bind:open="handleDropdownOpen" />
+      </van-dropdown-menu>
+    </view>
+    <view style="height: 3000rpx;"></view>
+  </view>
+</view>
+<!-- </scroll-view> -->

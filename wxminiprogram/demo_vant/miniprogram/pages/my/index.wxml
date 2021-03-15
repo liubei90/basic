@@ -1,0 +1,37 @@
+<!--index.wxml-->
+<view class="container">
+  <!-- 个人信息区域 -->
+  <view class="flex flex_align_items_center my_userinfo_secion">
+    <view class="flex flex_0">
+      <image class="my_avatar" src="{{ userinfo && userinfo['avatarUrl'] }}" />
+    </view>
+    <view class="flex flex_column flex_1 my_userinfo">
+      <text >{{ userinfo && userinfo['nickName'] || '未授权用户' }}</text>
+      <text >{{ userinfo && (userinfo['province'] + '/' + userinfo['city']) || '' }}</text>
+    </view>
+  </view>
+
+
+  <view class="navigator-section">
+    <!-- 会员卡 -->
+    <van-cell title="会员卡" is-link />
+
+    <!-- 活动 -->
+    <van-cell title="我的活动" is-link />
+
+    <!-- 分享给好友 -->
+    <van-cell title="邀请好友" is-link />
+  </view>
+
+  <view class="navigator-section">
+    <!-- 服务热线 -->
+    <van-cell title="服务热线" is-link />
+
+    <!-- 关于小程序 -->
+    <van-cell title="关于小程序" is-link />
+  </view>
+
+
+</view>
+
+<user-info bind:userinfo="handleUserinfo"></user-info>

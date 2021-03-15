@@ -1,0 +1,26 @@
+/**index.wxss**/
+.my_avatar {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+}
+
+.my_userinfo {
+  margin-left: 20rpx;
+}
+
+.my_userinfo_secion {
+  background-color: #fff;
+  margin-bottom: 30rpx;
+  padding: 30rpx;
+}
+
+.navigator-section {
+  margin: 30rpx;
+  background-color: #fff;
+  border-radius: 8px;
+}
+
+.navigator-section .van-cell {
+  background-color: unset;
+}

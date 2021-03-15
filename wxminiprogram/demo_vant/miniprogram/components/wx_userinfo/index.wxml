@@ -1,0 +1,8 @@
+<view>
+  <view wx:if="{{ show }}" class="wrapper">
+    <text>小程序需要获取您的基础用户信息</text>
+    <button type="primary" open-type="getUserInfo" bindgetuserinfo="handGetUserinfo" binderror="handError">
+      点击授权
+    </button>
+  </view>
+</view>

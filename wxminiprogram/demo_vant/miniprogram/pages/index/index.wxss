@@ -1,0 +1,59 @@
+/**index.wxss**/
+
+
+.search-section {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 78rpx;
+  overflow: hidden;
+  z-index: 10;
+  /* padding-top: 8rpx; */
+}
+
+.search-section .van-search {
+  padding: 0 0 0 30rpx;
+  width: 530rpx;
+}
+
+.banner-section {
+  height: 400rpx;
+}
+.banner-section image {
+  width: 100%;
+  height: 100%;
+}
+
+.shortcut-section {
+  position: relative;
+  top: -46rpx;
+  width: 85%;
+  margin: 0 auto;
+  display: flex;
+  padding: 30rpx;
+  background-color: #fff;
+  border-radius: 10rpx;
+}
+
+.shortcut-section image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.suggestion-section {
+
+}
+
+.suggestion-filter {
+
+}
+.suggestion-filter.fix {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+}
+.suggestion-filter.rel {
+  position: relative;
+}
