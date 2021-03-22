@@ -1,0 +1,16 @@
+<!-- <view class="activity-list_header">
+  <text >活动列表</text>
+  <view class="activity-list_more">更多</view>
+</view> -->
+<view wx:if="{{itemList && itemList.length}}" class="activity-list">
+  <block wx:for="{{itemList}}" wx:key="{{item.id}}">
+    <view wx:if="{{index !== 0}}" class="activity-list_top_hr"></view>
+    <activity-item class="activity-list_item" activity="{{item}}"></activity-item>
+  </block>
+</view>
+<view wx:else class="edge-container">
+  <image wx:if="{{isloading}}" class="edge-icon" src="../../assets/images/loading-three.png" />
+  <image wx:elif="{{isempty}}" class="edge-icon" src="../../assets/images/clear.png" />
+  <image wx:elif="{{iserror}}" class="edge-icon" src="../../assets/images/caution.png" />
+  <view wx:else></view>
+</view>

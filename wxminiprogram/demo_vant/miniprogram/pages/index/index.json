@@ -1,5 +1,7 @@
 {
   "enablePullDownRefresh": true,
   "navigationStyle": "custom",
-  "usingComponents": {}
+  "usingComponents": {
+    "activity-list": "../../components/activity/activity_list"
+  }
 }

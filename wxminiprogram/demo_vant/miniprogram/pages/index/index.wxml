@@ -34,14 +34,17 @@
   </view>
   <!-- 推荐列表 -->
   <view id="suggestion-section" class="suggestion-section">
-    <view id="suggestion_filter" class="suggestion-filter {{isFix ? 'fix' : 'rel'}}" style="top: {{filterTop}}px; height: 40px; background-color: red;">
+    <view id="suggestion_filter" class="suggestion-filter {{isFix ? 'fix' : 'rel'}}" style="top: {{filterTop}}px;">
       <van-dropdown-menu >
         <van-dropdown-item value="{{ cityValue }}" options="{{ citys }}" bind:open="handleDropdownOpen" />
         <van-dropdown-item value="{{ quanyiValue }}" options="{{ quanyi }}" bind:open="handleDropdownOpen" />
         <van-dropdown-item value="{{ typeValue }}" options="{{ types }}" bind:open="handleDropdownOpen" />
       </van-dropdown-menu>
     </view>
-    <view style="height: 3000rpx;"></view>
+    <view wx:if="{{ isFix ? true : false }}" style="height: {{filterHeight}}px;"></view>
+    <view class="suggestion_list">
+      <activity-list></activity-list>
+    </view>
   </view>
 </view>
 <!-- </scroll-view> -->

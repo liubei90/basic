@@ -53,7 +53,12 @@
   top: 0;
   left: 0;
   right: 0;
+  z-index: 2;
 }
 .suggestion-filter.rel {
   position: relative;
+}
+
+.suggestion_list {
+  /* padding-top: 30rpx; */
 }

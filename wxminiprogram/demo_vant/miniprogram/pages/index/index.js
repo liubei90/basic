@@ -36,6 +36,7 @@ Page({
     suggestionTop: 0,
     isFix: false,
     filterTop: 0,
+    filterHeight: 0,
   },
   onLoad() {
     this.handleScroll = util.throttle((scrollTop) => {
@@ -58,6 +59,11 @@ Page({
     });
     query.select('#suggestion-section').boundingClientRect((res) => {
       this.data.suggestionTop = res.top;
+    });
+    query.select('#suggestion_filter').boundingClientRect((res) => {
+      this.setData({
+        filterHeight: res.height,
+      });
     });
     query.exec();
   },

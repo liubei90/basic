@@ -1,0 +1,13 @@
+<view class="activity-item">
+  <view class="activity-item_phone">
+    <image src="../../assets/images/activity_default.png" />
+  </view>
+  <view class="activity-item_info">
+    <view class="activity-item_name">{{activity.name}}</view>
+    <view class="activity-item_place">{{activity.place}}</view>
+    <view class="activity-item_footer">
+      <view class="activity-item_time">{{activity.time}}</view>
+      <view class="activity-item_people">人数：{{activity.peoplenum}}</view>
+    </view>
+  </view>
+</view>

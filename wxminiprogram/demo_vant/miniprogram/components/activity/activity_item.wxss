@@ -1,0 +1,47 @@
+.activity-item {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.activity-item_phone {
+  flex-grow: 0;
+  margin-right: 30rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.activity-item_phone image {
+  width: 100rpx;
+  height: 100rpx;
+}
+
+.activity-item_info {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.activity-item_name {
+  font-size: 18px;
+}
+
+.activity-item_place {
+
+}
+
+.activity-item_footer {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.activity-item_time {
+  flex-grow: 1;
+}
+
+.activity-item_people {
+  flex-grow: 0;
+}
