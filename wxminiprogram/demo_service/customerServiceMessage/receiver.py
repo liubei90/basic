@@ -16,6 +16,9 @@ def encode_msg(timestamp, nonce):
 
 class CustomerServiceMessageReceiver(RequestHandler):
     async def get(self):
+        print(self.request.arguments)
+        print(self.request.body)
+        print(self.request.headers)
         signature = self.get_argument('signature', None)
         timestamp = self.get_argument('timestamp', None)
         nonce = self.get_argument('nonce', None)
@@ -26,3 +29,16 @@ class CustomerServiceMessageReceiver(RequestHandler):
 
         if signature == encode_msg(timestamp, nonce):
             return self.write(echostr)
+
+    async def post(self):
+        print(self.request.arguments)
+        print(self.request.body)
+        print(self.request.headers)
+
+        signature = self.get_argument('signature', None)
+        timestamp = self.get_argument('timestamp', None)
+        nonce = self.get_argument('nonce', None)
+        echostr = self.get_argument('echostr', None)
+
+        if signature == encode_msg(timestamp, nonce):
+            return self.write('ok')
