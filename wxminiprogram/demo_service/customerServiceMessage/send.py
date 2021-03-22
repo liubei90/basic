@@ -14,7 +14,7 @@ async def send(data):
     res = await client.fetch(HTTPRequest(
         url=f'https://api.weixin.qq.com/cgi-bin/message/custom/send?access_token={at}',
         method='POST',
-        body=json.dumps(data)
+        body=json.dumps(data, ensure_ascii=True)
     ))
 
     print(res.body)

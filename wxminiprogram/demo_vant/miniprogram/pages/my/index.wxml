@@ -29,6 +29,8 @@
 
     <!-- 关于小程序 -->
     <van-cell title="关于小程序" is-link />
+
+    <button type="primary" open-type="contact" bindcontact="handleContact">联系客服</button>
   </view>
 
 

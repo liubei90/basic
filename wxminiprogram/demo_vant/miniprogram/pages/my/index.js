@@ -15,5 +15,9 @@ Page({
     this.setData({
       userinfo: app.globalData.userInfo,
     });
+  },
+
+  handleContact() {
+    ;
   }
 })
