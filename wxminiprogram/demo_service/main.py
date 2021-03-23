@@ -8,6 +8,8 @@ from mem_cache import access_token_cache
 from auth.code2Session import Code2Session
 from customerServiceMessage.receiver import CustomerServiceMessageReceiver
 from demo.send_subscribe import SendSubscribe
+from demo.send_uniform_message import SendUniformMessage
+from demo.updatable_message import CreateActivityId, SetUpdatableMsg
 
 
 def main():
@@ -15,7 +17,10 @@ def main():
             (r"/auth.code2Session", Code2Session),
             (r"/customerServiceMessage.receiver", CustomerServiceMessageReceiver),
 
-            (r"/demo/send_subscribe", SendSubscribe)
+            (r"/demo/send_subscribe", SendSubscribe),
+            (r"/demo/send_uniform_message", SendUniformMessage),
+            (r"/demo/create_activity_id", CreateActivityId),
+            (r"/demo/set_updatable_msg", SetUpdatableMsg),
         ], debug=True)
 
     application.listen(8001)
