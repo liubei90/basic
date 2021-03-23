@@ -2,7 +2,8 @@
   "pages":[
     "pages/index/index",
     "pages/my/index",
-    "pages/demo/index"
+    "pages/demo/index",
+    "pages/demo/activity"
   ],
   "tabBar": {
     "list": [

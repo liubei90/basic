@@ -36,5 +36,5 @@ function throttle(fn, delay, ctx) {
 module.exports = {
   formatTime,
   throttle,
-  baseDomain: 'http://localhost:8011',
+  baseDomain: 'http://localhost:8001',
 }

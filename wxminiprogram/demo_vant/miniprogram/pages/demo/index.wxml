@@ -5,6 +5,18 @@
     <van-cell title="点击订阅" value="{{subscribe_result}}" bind:tap="handleSubscribe"/>
     <van-cell title="发送订阅消息" value="{{send_subscribe_result}}" border="{{ false }}" bind:tap="handleSendSubscribe"/>
   </van-cell-group>
+
+  <van-cell-group title="form消息(已废弃)">
+    <form report-submit="true" bindsubmit="handleSendUniformMessage">
+      <switch name="switch"/>
+      <button type="primary" formType="submit">发送uniformMessage</button>
+    </form>
+  </van-cell-group>
+
+  <van-cell-group title="动态消息">
+    <van-cell title="创建活动" value="{{activity_result}}" bind:tap="handleCreateActivityId"/>
+    <van-cell title="修改活动状态" value="{{activity_change_result}}" border="{{ false }}" bind:tap="handleSetUpdatableMsg"/>
+  </van-cell-group>
 </view>
 
 <user-info bind:userinfo="handleUserinfo"></user-info>
