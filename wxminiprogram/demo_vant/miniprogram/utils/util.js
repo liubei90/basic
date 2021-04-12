@@ -36,5 +36,6 @@ function throttle(fn, delay, ctx) {
 module.exports = {
   formatTime,
   throttle,
-  baseDomain: 'http://localhost:8001',
+  // baseDomain: 'http://localhost:8001',
+  baseDomain: 'https://wx-dev.lbliubei.cn',
 }

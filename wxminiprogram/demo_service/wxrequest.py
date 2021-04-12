@@ -6,6 +6,9 @@ from auth.getAccessToken import getAccessToken
 
 
 async def wxrequest(url, data=None, params=None, method = 'POST'):
+    print(url)
+    print(data)
+    print(method)
     at = await getAccessToken()
 
     if not at:
@@ -14,13 +17,16 @@ async def wxrequest(url, data=None, params=None, method = 'POST'):
     nurl = furl.furl(url)
     nurl.add({ 'access_token': at, **(params if params else {}) })
 
+    body = json.dumps(data, ensure_ascii=True) if data else None
+
     client = AsyncHTTPClient()
     res = await client.fetch(HTTPRequest(
         url=nurl.url,
         method=method,
-        body=json.dumps(data, ensure_ascii=True) if data else None
+        body=body
     ))
 
+    print(body)
     print(res.body)
 
     if res.code == 200:

@@ -105,6 +105,7 @@ Page({
 
         if (data.code == 0) {
           wx.setStorageSync('activity_id', data.data);
+          wx.setStorageSync('member_count', 1);
           this.setData({
             activity_result: '发送成功',
           });
@@ -118,19 +119,21 @@ Page({
                 value: '1'
               }, {
                 name: 'room_limit',
-                value: '3'
+                value: '5'
               }]
             }
           });
           return;
         }
         wx.removeStorageSync('activity_id');
+        wx.removeStorageSync('member_count');
         this.setData({
           activity_result: '发送失败',
         });
       },
       fail: () => {
         wx.removeStorageSync('activity_id');
+        wx.removeStorageSync('member_count');
         this.setData({
           activity_result: '发送失败',
         });
@@ -140,13 +143,14 @@ Page({
 
   handleSetUpdatableMsg() {
     let activity_id = wx.getStorageSync('activity_id');
-    let member_count = 1;
+    let member_count = wx.getStorageSync('member_count') || 1;
     let room_limit = 5;
 
     if (!activity_id) return;
 
+    wx.setStorageSync('member_count', member_count + 1);
     wx.request({
-      url: util.baseDomain + `/demo/set_updatable_msg?activity_id=${activity_id}&member_count=${member_count++}&room_limit=${room_limit}&target_state=${member_count >= room_limit? 1 : 0}`, 
+      url: util.baseDomain + `/demo/set_updatable_msg?activity_id=${activity_id}&member_count=${member_count}&room_limit=${room_limit}&target_state=${member_count >= room_limit? 1 : 0}`, 
       success: (res) => {
         console.log(res);
         let data = res.data;
