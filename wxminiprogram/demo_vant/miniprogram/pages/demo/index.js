@@ -1,5 +1,5 @@
 // index.js
-
+const token = 'eyJhbGciOiAiSFMyNTYifQ==.eyJzZXNzaW9uX2lkIjogIjI5YTIyZGZjLTliNDAtMTFlYi05Y2ZmLWZhMTYzZTg0YWFmMiIsICJ1c2VyX2lkIjogImZhNDExMGM0LTlhNjctMTFlYi05Y2ZmLWZhMTYzZTg0YWFmMiIsICJleHBpcmVfZGF0ZSI6ICIyMDIxLTA0LTEyIDEyOjM1OjQ0IiwgInNvdXJjZSI6ICJ3ZWIifQ==.iVLws6nXrB4bQ7VMkhnqOH9zezGTdhD55vuOkjJd4OU=';
 const util = require('../../utils/util.js');
 // 获取应用实例
 const app = getApp()
@@ -12,6 +12,9 @@ Page({
 
     activity_result: '',
     activity_change_result: '',
+
+    // 上传图片
+    fileList: []
   },
   onLoad() {
   },
@@ -164,6 +167,36 @@ Page({
         });
       },
     });
+  },
+
+  // 上传图片
+  handleAfterRead(event) {
+    const { file } = event.detail;
+    console.log(file);
+    const index = this.data.fileList.length;
+    this.setData({
+      ['fileList['+index+']']: { url: file.url, deletable: true, },
+    });
+  },
+
+  handleUploadFile() {
+    const fileList = this.data.fileList;
+
+    for (let i = 0; i < fileList.length; i++) {
+      const { url } = fileList[i];
+      wx.uploadFile({
+        url: 'https://wx-dev.lbliubei.cn/repair-equipment/mm/equipment_repair_file',
+        filePath: url,
+        name: 'file',
+        header: { Authorization: 'Bearer ' + token },
+        success: (res) => {
+          console.log('success', res);
+        },
+        fail: (err) => {
+          console.log('fail', err);
+        },
+      })
+    }
   },
 
   onShareAppMessage() {

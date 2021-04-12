@@ -17,6 +17,11 @@
     <van-cell title="创建活动" value="{{activity_result}}" bind:tap="handleCreateActivityId"/>
     <van-cell title="修改活动状态" value="{{activity_change_result}}" border="{{ false }}" bind:tap="handleSetUpdatableMsg"/>
   </van-cell-group>
+
+  <van-cell-group title="上传图片">
+    <van-uploader file-list="{{ fileList }}" bind:after-read="handleAfterRead"></van-uploader>
+    <van-button catchtap="handleUploadFile">上传</van-button>
+  </van-cell-group>
 </view>
 
 <user-info bind:userinfo="handleUserinfo"></user-info>
