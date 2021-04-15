@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "dependencies": {
-    "@vant/weapp": "^1.5.3"
+    "@vant/weapp": "^1.5.3",
+    "mp-html": "^2.1.1"
   },
   "devDependencies": {},
   "scripts": {

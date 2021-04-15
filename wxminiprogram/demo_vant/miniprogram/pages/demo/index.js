@@ -203,6 +203,10 @@ Page({
     }
   },
 
+  handleUserinfo() {
+    ;
+  },
+
   onShareAppMessage() {
     return {
       title: '测试动态消息',

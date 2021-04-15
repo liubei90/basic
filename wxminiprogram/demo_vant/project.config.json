@@ -30,7 +30,6 @@
       "disablePlugins": [],
       "outputPath": ""
     },
-    "enableEngineNative": false,
     "bundle": false,
     "useIsolateContext": true,
     "useCompilerModule": true,
@@ -40,7 +39,7 @@
     "packNpmRelationList": [
       {
         "packageJsonPath": "./node_module_app/package.json",
-        "miniprogramNpmDistDir": "./miniprogram"
+        "miniprogramNpmDistDir": "./miniprogram/"
       }
     ],
     "minifyWXSS": true

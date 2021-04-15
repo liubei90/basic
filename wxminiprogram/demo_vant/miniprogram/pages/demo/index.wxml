@@ -22,6 +22,10 @@
     <van-uploader file-list="{{ fileList }}" bind:after-read="handleAfterRead"></van-uploader>
     <van-button catchtap="handleUploadFile">上传</van-button>
   </van-cell-group>
+
+  <van-cell-group title="mp-html">
+    <van-cell title="html富文本" is-link url="./mp-html-demo"/>
+  </van-cell-group>
 </view>
 
 <user-info bind:userinfo="handleUserinfo"></user-info>
